@@ -1,7 +1,7 @@
 {
-  "title": "Proactive AI for Superintelligent Agents",
-  "tagline": "From waiting for instructions to discovering worthwhile work.",
-  "abstract": "AI agents are increasingly capable of reasoning, planning, using tools, and executing long-horizon tasks, yet many still rely on humans to identify worthwhile work and initiate it. Proactiveness adds the capacity to initiate purposeful action without an explicit request. We examine proactiveness as a capability that complements intelligence and alignment in the development of superintelligent agents. Research on proactiveness, however, remains fragmented across communities with different terminology, assumptions, and evaluation practices. We integrate its conceptual foundations and historical development across control, agent theory, ubiquitous computing, mixed-initiative interaction, and foundation-model research. We organize enabling mechanisms into six capacities: awareness, anticipation, agenda formation, arbitration, action, and adaptation. We synthesize evaluation approaches at the task, mechanism, and user levels. Across 13 application domains, including coding, autonomous research, robotics, healthcare, and education, we compare the initiative agents exercise with the authority they are granted. Finally, we outline future directions in capability development, safety and governance, and emerging application frontiers, grounding the development of calibrated proactiveness for superintelligent agents in the achievements and limitations of existing systems.",
+  "title": "面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）",
+  "tagline": "从等待指令，到发现值得开展的工作。",
+  "abstract": "AI 智能体（AI agents）在推理、规划、工具使用和长时程任务执行方面的能力日益增强，但许多智能体仍依赖人类识别值得开展的工作并发起行动。主动性（Proactiveness）赋予智能体在没有明确请求时发起有目的行动的能力。我们将主动性视为一项能力，探讨它如何在超级智能体（Superintelligent Agents）的发展中与智能（Intelligence）和对齐（Alignment）相互补充。然而，主动性研究仍分散于不同研究社群之中，各社群使用的术语、假设和评估实践各不相同。我们整合了控制理论（Control）、智能体理论（Agent Theory）、普适计算（Ubiquitous Computing）、混合主动式交互（Mixed-initiative Interaction）和基础模型（Foundation Models）研究中的概念基础与历史发展。我们将支撑机制归纳为六项能力：感知（Awareness）、前瞻（Anticipation）、议程形成（Agenda Formation）、仲裁（Arbitration）、行动（Action）和适应（Adaptation）。我们综合了任务、机制和用户三个层面的评估方法。在包括编程、自主研究、机器人、医疗和教育在内的 13 个应用领域中，我们比较了智能体所行使的主动性（Initiative）与获授的权限（Authority）。最后，我们概述了能力发展、安全与治理，以及新兴应用前沿方面的未来方向，以现有系统的成就与局限为基础，推动超级智能体发展出校准得当的主动性（Calibrated Proactiveness）。",
   "authors": [
     "Ke Yang",
     "Jiateng Liu",
@@ -27,7 +27,12 @@
     "Jiawei Han",
     "ChengXiang Zhai"
   ],
-  "author_rows": [6, 5, 6, 6],
+  "author_rows": [
+    6,
+    5,
+    6,
+    6
+  ],
   "affiliations": [
     "University of Illinois Urbana-Champaign",
     "Google",

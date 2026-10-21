@@ -1,131 +1,131 @@
 {
-  "source": "The survey's Evaluation section: the table 'Evaluation taxonomy' and the figure 'Evaluating proactiveness requires evidence beyond task completion'",
+  "source": "综述的“评估（Evaluation）”章节：“评估分类（Evaluation taxonomy）”表，以及“评估主动性需要超越任务完成的证据（Evaluating proactiveness requires evidence beyond task completion）”图",
   "levels": [
     {
-      "name": "Task Utility",
-      "question": "Does proactive assistance improve overall task outcomes?",
-      "purpose": "Establishes whether an intervention improves outcomes.",
+      "name": "任务效用（Task Utility）",
+      "question": "主动式协助能否改善任务的整体结果？",
+      "purpose": "确定干预是否改善结果。",
       "categories": [
         {
-          "name": "Task Success",
+          "name": "任务成功（Task Success）",
           "metrics": [
-            "Goal completion rate against reference or verifiable outcomes",
-            "Domain-specific task outcomes",
-            "Per-intervention (turn-level) success rate"
+            "依据参考结果或可验证结果衡量的目标完成率（Goal completion rate）",
+            "特定领域的任务结果",
+            "每次干预（轮次级）的成功率"
           ]
         },
         {
-          "name": "Task Efficiency",
+          "name": "任务效率（Task Efficiency）",
           "metrics": [
-            "Agent computational cost: latency, tokens, triggering frequency",
-            "User interaction cost: turns, interruptions, correction effort",
-            "Quality-adjusted efficiency: benefit per unit cost"
+            "智能体计算成本：延迟（Latency）、词元（Tokens）、触发频率",
+            "用户交互成本：轮次、打断、纠正所需投入",
+            "经质量调整的效率：单位成本带来的收益"
           ]
         }
       ]
     },
     {
-      "name": "Mechanism-Level",
-      "question": "How does the agent decide what, when, and how to act?",
-      "purpose": "Examines how effectively the underlying capacities operate.",
+      "name": "机制层面（Mechanism-Level）",
+      "question": "智能体如何决定做什么、何时做以及如何做？",
+      "purpose": "检验底层能力运行的有效程度。",
       "categories": [
         {
-          "name": "Context Modeling Efficacy",
+          "name": "上下文建模效能（Context Modeling Efficacy）",
           "capacity": "awareness",
           "metrics": [
-            "Retrieval precision and recall over long or multimodal context",
-            "Knowledge-update accuracy and stale-information rate",
-            "Context efficiency",
-            "Pre-decision evidence coverage"
+            "长上下文或多模态上下文中的检索精确率与召回率（Precision / Recall）",
+            "知识更新准确率与过时信息比例",
+            "上下文效率（Context efficiency）",
+            "决策前证据覆盖度"
           ]
         },
         {
-          "name": "User State and World State Anticipation",
+          "name": "用户状态与世界状态前瞻（User State and World State Anticipation）",
           "capacity": "anticipation",
           "metrics": [
-            "Intent, goal, and preference accuracy",
-            "Prediction lead time and false-alarm rate",
-            "Ambiguity-detection F1 and clarification utility",
-            "Next-state and event-forecast accuracy"
+            "意图、目标和偏好准确率",
+            "预测提前量与误报率（False-alarm rate）",
+            "歧义检测 F1 与澄清效用",
+            "下一状态与事件预测准确率"
           ]
         },
         {
-          "name": "Planning Quality",
+          "name": "规划质量（Planning Quality）",
           "capacity": "agenda",
           "metrics": [
-            "Objective and agenda-selection accuracy",
-            "Plan validity and subgoal coverage",
-            "Constraint satisfaction and preference utility",
-            "Plan-revision success under new constraints"
+            "目标与议程选择准确率",
+            "计划有效性与子目标覆盖度",
+            "约束满足程度与偏好效用",
+            "新约束下的计划修订成功率"
           ]
         },
         {
-          "name": "Intervention Decision and Timing",
+          "name": "干预决策与时机（Intervention Decision and Timing）",
           "capacity": "arbitration",
           "metrics": [
-            "Intervention precision, recall, and F1 (act, ask, defer, or abstain)",
-            "Autonomy calibration: deferral accuracy, risk–coverage",
-            "Trigger-timing accuracy",
-            "Unwanted-initiative or persistence-after-rejection rate"
+            "干预精确率、召回率与 F1（行动、询问、推迟或放弃）",
+            "自主权校准（Autonomy calibration）：交由他人决策的准确率、风险—覆盖度（Risk–coverage）",
+            "触发时机准确率",
+            "不受欢迎的主动行动比例，或遭拒绝后继续坚持的比例"
           ]
         },
         {
-          "name": "Intervention Delivery and Presentation",
+          "name": "干预交付与呈现（Intervention Delivery and Presentation）",
           "capacity": "action",
           "metrics": [
-            "Content correctness and execution accuracy",
-            "Delivery-mode appropriateness relative to risk and reversibility",
-            "Comprehension and legibility of agent intent",
-            "Editability, cancellation, and reversal success"
+            "内容正确性与执行准确率",
+            "交付方式相对于风险和可逆性的适当程度",
+            "智能体意图的可理解性与清晰度",
+            "编辑、取消和撤销成功率"
           ]
         },
         {
-          "name": "Adaptation and Generalization",
+          "name": "适应与泛化（Adaptation and Generalization）",
           "capacity": "adaptation",
           "metrics": [
-            "Personalization gain and learning efficiency",
-            "Recovery speed and stale-memory rate under drift",
-            "Generalization to unseen users, tasks, or environments"
+            "个性化收益与学习效率",
+            "发生漂移时的恢复速度与过时记忆比例",
+            "对未见过的用户、任务或环境的泛化能力（Generalization）"
           ]
         }
       ]
     },
     {
-      "name": "User Experience",
-      "question": "How does proactive assistance affect the user?",
-      "purpose": "Assesses effects on workload, control, and trust.",
+      "name": "用户体验（User Experience）",
+      "question": "主动式协助如何影响用户？",
+      "purpose": "评估其对工作负荷、控制感和信任的影响。",
       "categories": [
         {
-          "name": "User Workload",
+          "name": "用户工作负荷（User Workload）",
           "metrics": [
-            "Subjective workload: NASA-TLX, Workload Profile, SWAT",
-            "Behavioral disruption: interpretation time, recovery time, task-switch cost",
-            "Net effort removed vs. newly introduced"
+            "主观工作负荷：NASA-TLX、Workload Profile、SWAT",
+            "行为干扰：理解时间、恢复时间、任务切换成本",
+            "减轻的投入与新引入的投入之差"
           ]
         },
         {
-          "name": "Usability and Experience",
+          "name": "可用性与体验（Usability and Experience）",
           "metrics": [
-            "Standardized usability and UX scores: SUS, UEQ",
-            "Perceived usefulness, naturalness, and collaboration quality",
-            "Intrusiveness and privacy concern"
+            "标准化可用性与用户体验（UX）评分：SUS、UEQ",
+            "感知有用性、自然程度与协作质量",
+            "侵扰程度与隐私顾虑"
           ]
         },
         {
-          "name": "Level of Control",
+          "name": "控制程度（Level of Control）",
           "metrics": [
-            "Perceived agency and preferred autonomy level",
-            "Override, modification, and reversal success rate",
-            "Gap between formal and effective control"
+            "感知能动性（Agency）与偏好的自主权（Autonomy）水平",
+            "覆盖、修改和撤销成功率",
+            "形式控制与有效控制之间的差距"
           ]
         },
         {
-          "name": "Trust and Reliance",
+          "name": "信任与依赖（Trust and Reliance）",
           "metrics": [
-            "Trust-in-automation scales, calibrated to actual reliability",
-            "Appropriate reliance: correct-accept and correct-reject rate",
-            "Critical-engagement behavior: verification, error detection",
-            "Longitudinal trust trajectory"
+            "依据实际可靠性校准的自动化信任量表（Trust-in-automation scales）",
+            "恰当依赖：正确接受与正确拒绝的比例",
+            "审慎参与行为：验证、错误检测",
+            "纵向信任轨迹"
           ]
         }
       ]

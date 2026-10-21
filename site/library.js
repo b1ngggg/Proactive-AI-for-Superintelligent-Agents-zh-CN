@@ -20,7 +20,14 @@
   const CAP = Object.fromEntries(CAPS.map((c, i) => [c.id, { ...c, i }]));
   const APP_COLOR = token("--cold") || "#93a9bd";
   const SPARK = token("--spark") || "#ffb44c";
-  const KIND_LABEL = { method: "Method", system: "System", benchmark: "Benchmark", study: "Study", position: "Position", survey: "Survey", foundational: "Foundational" };
+  const KIND_LABEL = { method: "方法", system: "系统", benchmark: "基准（Benchmark）", study: "研究", position: "观点", survey: "综述", foundational: "基础研究" };
+  const DOMAIN_LABEL = { "Agriculture": "农业（Agriculture）", "AutoResearch": "自动科研（AutoResearch）", "Coding": "编程（Coding）", "Education": "教育（Education）", "Embodied & Robotics": "具身智能与机器人（Embodied & Robotics）", "Entertainment & Media": "娱乐与媒体（Entertainment & Media）", "GUI Agents": "图形界面智能体（GUI Agents）", "General References": "通用参考文献（General References）", "Healthcare": "医疗健康（Healthcare）", "Information Access": "信息获取（Information Access）", "Law": "法律（Law）", "Security": "安全（Security）", "Smart City": "智慧城市（Smart City）", "Smart Home": "智能家居（Smart Home）" };
+  const domainLabel = d => DOMAIN_LABEL[d] || d;
+  const typeLabel = t => ({ Research: "科研", Commercial: "商业" })[t] || t;
+  const dimensionLabel = d => taxonomy?.capacities.flatMap(c => c.subdimensions).find(s => s.name === d)?.display_name || d;
+  const displayTitle = p => p.title_zh || p.title;
+  const displayShort = p => p.short_zh || (p.short === p.title ? p.title_zh : "") || p.short;
+  const venueLabel = v => ({ "Technical report": "技术报告", "PhD thesis": "博士学位论文", "Master\'s thesis": "硕士学位论文", Book: "图书" })[v] || v;
 
   const state = {
     tab: "papers", q: "", domain: "", kind: "", since: "", origin: "", caps: new Set(),
@@ -62,7 +69,7 @@
       [pdoc, adoc, taxonomy, mdoc] = await Promise.all([load("papers.json"), load("applications.json"), load("taxonomy.json"), load("maturity.json")]);
     } catch (e) {
       console.error(e);
-      $("#result-count").textContent = "The library data could not be loaded.";
+      $("#result-count").textContent = "无法加载文献库数据。";
       return;
     }
     papers = pdoc.papers.map(tidy);
@@ -75,7 +82,7 @@
     const initial = Object.keys(byDate).sort((a, b) => byDate[b] - byDate[a] || a.localeCompare(b))[0] || "";
     const cutoff = new Date(Date.now() - 60 * 864e5).toISOString().slice(0, 10);
     newCutoff = initial > cutoff ? initial : cutoff;
-    $("#lib-updated").textContent = new Date(pdoc.updated + "T00:00:00").toLocaleDateString("en", { month: "long", year: "numeric" });
+    $("#lib-updated").textContent = new Date(pdoc.updated + "T00:00:00").toLocaleDateString("zh-CN", { month: "long", year: "numeric" });
 
     stats(mdoc);
     const bar = $(".lib-bar");
@@ -101,16 +108,16 @@
   /* -------------------------------------------------------------- controls */
   function controls() {
     const domains = [...new Set([...papers.flatMap(p => p.domains || []), ...systems.map(s => s.domain)])].sort();
-    $("#f-domain").insertAdjacentHTML("beforeend", domains.map(d => `<option>${esc(d)}</option>`).join(""));
+    $("#f-domain").insertAdjacentHTML("beforeend", domains.map(d => `<option value="${esc(d)}">${esc(domainLabel(d))}</option>`).join(""));
     const kinds = [...new Set(papers.map(p => p.kind))].sort();
     $("#f-kind").insertAdjacentHTML("beforeend", kinds.map(k => `<option value="${k}">${KIND_LABEL[k] || k}</option>`).join(""));
     const years = [...new Set(papers.map(p => p.year).filter(Boolean))].sort((a, b) => b - a);
-    $("#f-year").insertAdjacentHTML("beforeend", years.filter(y => y >= 2015).map(y => `<option value="${y}">${y} or later</option>`).join("") + `<option value="0">Before 2015</option>`);
+    $("#f-year").insertAdjacentHTML("beforeend", years.filter(y => y >= 2015).map(y => `<option value="${y}">${y} 年及以后</option>`).join("") + `<option value="0">2015 年以前</option>`);
 
     const capName = id => taxonomy.capacities.find(c => c.id === id)?.name || id;
     const count = id => id === "apps" ? papers.filter(p => !(p.capacities || []).length).length : papers.filter(p => (p.capacities || []).includes(id)).length;
     $("#f-caps").innerHTML = CAPS.map(c => `<button type="button" class="chip" aria-pressed="false" data-cap="${c.id}" style="--h:${c.color}">${capName(c.id)} <i>${count(c.id)}</i></button>`).join("")
-      + `<button type="button" class="chip" aria-pressed="false" data-cap="apps" style="--h:${APP_COLOR}" title="Papers tagged by domain only: application papers and general references">Domain only <i>${count("apps")}</i></button>`;
+      + `<button type="button" class="chip" aria-pressed="false" data-cap="apps" style="--h:${APP_COLOR}" title="仅按领域标注的论文：应用论文与通用参考文献">仅领域 <i>${count("apps")}</i></button>`;
 
     $("#f-caps").addEventListener("click", e => {
       const b = e.target.closest("[data-cap]");
@@ -139,7 +146,7 @@
     $("#rows-systems").addEventListener("click", onRowClick);
     $("#rows-papers").addEventListener("mouseover", e => { const r = e.target.closest("tr.row"); Galaxy.highlight(r?.dataset.id || null); });
     $("#rows-papers").addEventListener("mouseleave", () => Galaxy.highlight(null));
-    $("#copy-shown").addEventListener("click", () => copy(filteredPapers().filter(p => p.title).map(bibtex).join("\n\n"), "BibTeX copied"));
+    $("#copy-shown").addEventListener("click", () => copy(filteredPapers().filter(p => p.title).map(bibtex).join("\n\n"), "已复制 BibTeX"));
     $("#csv").addEventListener("click", downloadCSV);
     document.addEventListener("library:focus", e => {
       clearFilters(false);
@@ -169,8 +176,8 @@
   }
 
   /* --------------------------------------------------------------- filters */
-  const hay = p => [p.short, p.title, p.citation_key, ...(p.citation_aliases || []), p.authors, p.venue, p.dimension, p.note, p.kind, ...(p.domains || []), ...(p.capacities || []), p.year].join(" ").toLowerCase();
-  const shay = s => Object.values(s).flat().join(" ").toLowerCase();
+  const hay = p => [p.short, p.short_zh, p.title, p.title_zh, p.citation_key, ...(p.citation_aliases || []), p.authors, p.venue, p.dimension, p.note, p.kind, ...(p.domains || []), ...(p.domains || []).map(domainLabel), dimensionLabel(p.dimension), ...(p.capacities || []), p.year].join(" ").toLowerCase();
+  const shay = s => [...Object.values(s).flat(), domainLabel(s.domain), typeLabel(s.research_type)].join(" ").toLowerCase();
 
   function matchPaper(p) {
     if (state.q && !state.q.toLowerCase().split(/\s+/).every(w => hay(p).includes(w))) return false;
@@ -222,7 +229,7 @@
     $$("#f-caps .chip").forEach(b => b.setAttribute("aria-pressed", state.caps.has(b.dataset.cap)));
     const fc = $("#f-cluster");
     fc.hidden = !state.cluster || state.tab !== "papers";
-    if (state.cluster) fc.innerHTML = `Map cluster: ${esc(state.cluster.label)} <i>${state.cluster.ids.size}</i> <span aria-hidden="true">×</span>`;
+    if (state.cluster) fc.innerHTML = `地图聚类：${esc(state.cluster.label)} <i>${state.cluster.ids.size}</i> <span aria-hidden="true">×</span>`;
     $$(".grid th button").forEach(b => {
       const [key, dir] = state.sort[b.closest("#panel-papers") ? "papers" : "systems"];
       if (b.dataset.sort === key) b.setAttribute("aria-sort", dir > 0 ? "ascending" : "descending");
@@ -234,53 +241,53 @@
     $("#count-systems").textContent = systems.length;
     const shown = state.tab === "papers" ? fp.length : fs.length;
     const total = state.tab === "papers" ? papers.length : systems.length;
-    const noun = state.tab === "papers" ? "papers" : "representative works";
-    $("#result-count").textContent = shown === total ? `${total} ${noun}` : `${shown} of ${total} ${noun} match`;
+    const noun = state.tab === "papers" ? "篇论文" : "项代表性工作";
+    $("#result-count").textContent = shown === total ? `${total} ${noun}` : `${total} ${noun} · 匹配 ${shown} 项`;
     $("#empty").hidden = shown > 0;
     const limit = Math.max(state.limit || PAGE, state.open?.startsWith("p:") ? fp.findIndex(p => `p:${p.id}` === state.open) + 1 : 0);
     $("#rows-papers").innerHTML = fp.slice(0, limit).map(paperRow).join("");
     const more = $("#more-papers"), rest = fp.length - limit;
     more.hidden = state.tab !== "papers" || rest <= 0;
-    more.textContent = `Show ${Math.min(rest, PAGE)} more · ${rest} not shown`;
+    more.textContent = `再显示 ${Math.min(rest, PAGE)} 项 · 尚有 ${rest} 项未显示`;
     $("#rows-systems").innerHTML = fs.map(systemRow).join("");
     Galaxy.filter(new Set(fp.map(p => p.id)));
   }
 
   function capTags(p) {
     const tags = (p.capacities || []).map(c => `<span class="tag" style="--h:${CAP[c].color}">${esc(cap(c).name)}</span>`)
-      .concat((p.domains || []).map(d => `<span class="tag" style="--h:${APP_COLOR}">${esc(d)}</span>`));
-    return tags.join("") + (p.dimension ? `<span class="cell-dim">${esc(p.dimension)}</span>` : "");
+      .concat((p.domains || []).map(d => `<span class="tag" style="--h:${APP_COLOR}">${esc(domainLabel(d))}</span>`));
+    return tags.join("") + (p.dimension ? `<span class="cell-dim">${esc(dimensionLabel(p.dimension))}</span>` : "");
   }
   const cap = id => taxonomy.capacities.find(c => c.id === id) || { name: id };
 
   function paperRow(p) {
     const isNew = p.added > newCutoff;
     const open = state.open === `p:${p.id}`;
-    const title = !p.title ? `<div class="p-title cell-muted">Metadata being confirmed</div>` : showTitle(p) ? `<div class="p-title">${esc(p.title)}</div>` : "";
+    const title = !p.title ? `<div class="p-title cell-muted">正在确认元数据</div>` : showTitle(p) ? `<div class="p-title">${esc(displayTitle(p))}</div>` : "";
     const row = `<tr class="row${open ? " lit" : ""}" data-id="${p.id}" data-type="p" aria-expanded="${open}">
-      <td class="cell-paper"><div class="p-short">${esc(p.short)}${isNew ? '<span class="badge badge-new">New</span>' : ""}${p.status !== "verified" ? '<span class="badge badge-pending">Pending</span>' : ""}</div>${title}${p.authors ? `<div class="p-authors">${esc(p.authors)}</div>` : ""}</td>
+      <td class="cell-paper"><div class="p-short">${esc(displayShort(p))}${isNew ? '<span class="badge badge-new">新增</span>' : ""}${p.status !== "verified" ? '<span class="badge badge-pending">待确认</span>' : ""}</div>${title}${p.authors ? `<div class="p-authors">${esc(p.authors)}</div>` : ""}</td>
       <td>${capTags(p)}</td>
       <td class="cell-muted cell-hide-sm">${esc(KIND_LABEL[p.kind] || p.kind)}</td>
-      <td class="cell-muted">${esc(p.venue || "—")}</td>
+      <td class="cell-muted">${esc(venueLabel(p.venue) || "—")}</td>
       <td class="cell-year">${p.year || "—"}</td>
-      <td class="cell-actions">${p.url ? `<a class="icon-btn" href="${esc(p.url)}" target="_blank" rel="noopener" title="Open paper" aria-label="Open ${esc(p.short)}">↗</a>` : ""}${p.title ? `<button type="button" class="icon-btn" data-bib="${p.id}" title="Copy BibTeX" aria-label="Copy BibTeX for ${esc(p.short)}">bib</button>` : ""}</td>
+      <td class="cell-actions">${p.url ? `<a class="icon-btn" href="${esc(p.url)}" target="_blank" rel="noopener" title="打开论文" aria-label="打开 ${esc(displayShort(p))}">↗</a>` : ""}${p.title ? `<button type="button" class="icon-btn" data-bib="${p.id}" title="复制 BibTeX" aria-label="复制 ${esc(displayShort(p))} 的 BibTeX">bib</button>` : ""}</td>
     </tr>`;
     if (!open) return row;
     const sys = (p.systems || []).map(id => systemById.get(id)).filter(Boolean);
     return row + `<tr class="detail"><td colspan="6"><div class="detail-inner">
-      <div><h4>Where it sits</h4><p>${where(p)} ${esc(KIND_LABEL[p.kind] || "")}${p.note ? ` · ${esc(p.note)}` : ""}</p>
-        ${sys.length ? `<h4 style="margin-top:14px">Analyzed as a representative work</h4><p>${sys.map(s => `<button type="button" class="inline-link" data-goto-system="${s.id}">${esc(s.system)}</button> (${esc(s.domain)})`).join(", ")}</p>` : ""}
-        ${p.status !== "verified" ? `<h4 style="margin-top:14px">Status</h4><p>The survey names this work, but its bibliographic details are still being confirmed.</p>` : ""}</div>
-      <div><h4>BibTeX</h4>${p.title ? `<pre>${esc(bibtex(p))}</pre>` : `<p class="cell-muted">Available once metadata is confirmed.</p>`}</div>
+      <div><h4>所属位置</h4><p>${where(p)} ${esc(KIND_LABEL[p.kind] || "")}${p.note ? ` · ${esc(p.note)}` : ""}</p>
+        ${sys.length ? `<h4 style="margin-top:14px">作为代表性工作分析</h4><p>${sys.map(s => `<button type="button" class="inline-link" data-goto-system="${s.id}">${esc(s.system)}</button> （${esc(domainLabel(s.domain))}）`).join(", ")}</p>` : ""}
+        ${p.status !== "verified" ? `<h4 style="margin-top:14px">状态</h4><p>本综述提到了这项工作，其书目信息仍在确认中。</p>` : ""}</div>
+      <div><h4>BibTeX</h4>${p.title ? `<pre>${esc(bibtex(p))}</pre>` : `<p class="cell-muted">元数据确认后提供。</p>`}</div>
     </div></td></tr>`;
   }
 
   function where(p) {
     const caps = p.capacities || [], doms = (p.domains || []).filter(d => d !== GENERAL);
-    const join = a => a.length > 1 ? `${a.slice(0, -1).join(", ")} and ${a[a.length - 1]}` : a[0];
-    if (caps.length) return `Informs <b>${join(caps.map(c => esc(cap(c).name)))}</b>${p.dimension ? `, under ${esc(p.dimension)}` : ""}${doms.length ? `, with applications in ${esc(join(doms))}` : ""}.`;
-    if (doms.length) return `Cited for applications in <b>${esc(join(doms))}</b>.`;
-    return "A general reference for the survey.";
+    const join = a => a.length > 1 ? `${a.slice(0, -1).join("、")}与${a[a.length - 1]}` : a[0];
+    if (caps.length) return `为<b>${join(caps.map(c => esc(cap(c).name)))}</b>提供依据${p.dimension ? `，属于${esc(dimensionLabel(p.dimension))}` : ""}${doms.length ? `，应用于${esc(join(doms.map(domainLabel)))}` : ""}。`;
+    if (doms.length) return `作为<b>${esc(join(doms.map(domainLabel)))}</b>领域的应用文献引用。`;
+    return "本综述的通用参考文献。";
   }
 
   function systemRow(s) {
@@ -288,19 +295,19 @@
     const linked = (s.citation_keys || []).map(id => paperById.get(id)).filter(Boolean);
     const row = `<tr class="row${open ? " lit" : ""}" data-id="${s.id}" data-type="s" aria-expanded="${open}">
       <td class="cell-paper"><div class="p-short">${esc(s.system)}</div><div class="p-authors">${esc(s.anticipation)}</div></td>
-      <td><span class="tag" style="--h:${APP_COLOR}">${esc(s.domain)}</span></td>
+      <td><span class="tag" style="--h:${APP_COLOR}">${esc(domainLabel(s.domain))}</span></td>
       <td>${esc(s.action)}</td>
       <td class="cell-muted">${esc(s.deployment)}</td>
-      <td class="cell-muted">${esc(s.research_type)}</td>
-      <td class="cell-actions">${linked.map(p => `<button type="button" class="icon-btn" data-goto-paper="${p.id}" title="Open paper in the library">paper</button>`).join("")}</td>
+      <td class="cell-muted">${esc(typeLabel(s.research_type))}</td>
+      <td class="cell-actions">${linked.map(p => `<button type="button" class="icon-btn" data-goto-paper="${p.id}" title="在文献库中打开论文">论文</button>`).join("")}</td>
     </tr>`;
     if (!open) return row;
-    return row + `<tr class="detail"><td colspan="6"><div class="detail-inner"><div class="pipeline">${CAPS.map(c => `<div style="--h:${c.color}"><b>${esc(cap(c.id).name)}</b>${s[c.id] ? esc(s[c.id]) : '<span class="none">Not identified in the source table</span>'}</div>`).join("")}</div></div></td></tr>`;
+    return row + `<tr class="detail"><td colspan="6"><div class="detail-inner"><div class="pipeline">${CAPS.map(c => `<div style="--h:${c.color}"><b>${esc(cap(c.id).name)}</b>${s[c.id] ? esc(s[c.id]) : '<span class="none">原始表格中未标明</span>'}</div>`).join("")}</div></div></td></tr>`;
   }
 
   function onRowClick(e) {
     const bib = e.target.closest("[data-bib]");
-    if (bib) { copy(bibtex(paperById.get(bib.dataset.bib)), "BibTeX copied"); return; }
+    if (bib) { copy(bibtex(paperById.get(bib.dataset.bib)), "已复制 BibTeX"); return; }
     const gs = e.target.closest("[data-goto-system]");
     if (gs) { openEntry("s", gs.dataset.gotoSystem); return; }
     const gp = e.target.closest("[data-goto-paper]");
@@ -368,7 +375,7 @@
       let ok = false;
       try { ok = document.execCommand("copy"); } catch { ok = false; }
       ta.remove();
-      toast(ok ? msg : "Copy is blocked here. Open a row to select the BibTeX.");
+      toast(ok ? msg : "此处无法复制。请展开条目以选取 BibTeX。");
     }
   }
 
@@ -491,7 +498,7 @@
         const capId = (n.p.capacities || [])[0];
         const era = ERAS.findIndex(([a, b]) => (n.p.year || 2026) >= a && (n.p.year || 2026) <= b);
         const key = `${capId || n.p.domains[0]}|${era}`;
-        if (!groups.has(key)) groups.set(key, { key, group: capId ? cap(capId).name : n.p.domains[0], color: n.color, anchor: n.anchor, nodes: [] });
+        if (!groups.has(key)) groups.set(key, { key, group: capId ? cap(capId).name : domainLabel(n.p.domains[0]), color: n.color, anchor: n.anchor, nodes: [] });
         groups.get(key).nodes.push(n);
       });
       clusters = [...groups.values()].map(c => {
@@ -722,11 +729,11 @@
         // beyond its hub, among its papers; at the top and the bottom of the ring, where the domains' ring runs close, inside it
         const k = capPos[c.id], out = Math.abs(Math.cos(k.a)) < 0.3 ? 0.6 : 1.42;
         labels.push({ kind: "cap", x: k.x * out, y: k.y * out, z: 0, hub: k });
-        html.push(`<div class="g-label g-cap" style="--h:${c.color}"><b>${esc(cap(c.id).name)}</b>${counts[c.id] || 0} papers</div>`);
+        html.push(`<div class="g-label g-cap" style="--h:${c.color}"><b>${esc(cap(c.id).name)}</b>${counts[c.id] || 0} 篇论文</div>`);
       });
       Object.entries(domPos).forEach(([d, k]) => {
         labels.push({ kind: "dom", x: k.x * 1.16, y: k.y * 1.16, z: 0, hub: k });
-        html.push(`<div class="g-label g-dom">${esc(d)}</div>`);
+        html.push(`<div class="g-label g-dom">${esc(domainLabel(d))}</div>`);
       });
       AXIS_YEARS.forEach(y => {
         labels.push({ kind: "year", x: 0, y: -5.5, z: yearZ(y) });
@@ -930,14 +937,14 @@
         if (hit?.c) {
           hoverId = null;
           const c = hit.c, top = c.nodes.filter(n => active.has(n.id)).sort((a, b) => (b.p.year || 0) - (a.p.year || 0)).slice(0, 3);
-          tip.innerHTML = `<b>${esc(c.group)}</b>${c.shown} paper${c.shown === 1 ? "" : "s"}${c.years ? ` · ${esc(c.years)}` : ""}<small>${top.map(n => esc(n.p.short)).join("<br>")}${c.shown > 3 ? "<br>…" : ""}</small><small>Click to open this cluster</small>`;
+          tip.innerHTML = `<b>${esc(c.group)}</b>${c.shown} 篇论文${c.years ? ` · ${esc(c.years)}` : ""}<small>${top.map(n => esc(displayShort(n.p))).join("<br>")}${c.shown > 3 ? "<br>…" : ""}</small><small>点击打开此聚类</small>`;
           tip.hidden = false;
           tip.style.left = `${Math.max(12, Math.min(hit.sx + 16, w - tip.offsetWidth - 12))}px`;
           tip.style.top = `${Math.max(12, Math.min(hit.sy + 16, h - tip.offsetHeight - 12))}px`;
         } else if (hit) {
           hoverId = hit.n.id;
           const p = hit.n.p;
-          tip.innerHTML = `<b>${esc(p.short)}</b>${!p.title ? "Metadata being confirmed" : showTitle(p) ? esc(p.title) : ""}<small>${esc([p.venue, p.year].filter(Boolean).join(" · "))}${p.dimension ? ` · ${esc(p.dimension)}` : ""}</small>`;
+          tip.innerHTML = `<b>${esc(displayShort(p))}</b>${!p.title ? "正在确认元数据" : showTitle(p) ? esc(displayTitle(p)) : ""}<small>${esc([venueLabel(p.venue), p.year].filter(Boolean).join(" · "))}${p.dimension ? ` · ${esc(dimensionLabel(p.dimension))}` : ""}</small>`;
           tip.hidden = false;
           const tx = Math.min(hit.sx + 16, w - tip.offsetWidth - 12), ty = Math.max(12, Math.min(hit.sy + 16, h - tip.offsetHeight - 12));
           tip.style.left = `${Math.max(12, tx)}px`;

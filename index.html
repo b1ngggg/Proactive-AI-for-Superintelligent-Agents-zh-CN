@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Proactive AI for Superintelligent Agents: a survey from UIUC, Google, Stanford, UC Berkeley and CMU, told as one continuous scroll-driven shot.">
+  <meta name="description" content="面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）：由 UIUC、Google、Stanford、UC Berkeley 和 CMU 联合撰写的综述，以连续的滚动驱动镜头呈现。">
   <meta name="theme-color" content="#0b0c0f">
   <meta name="story-data" content="data/">
-  <title>Proactive AI for Superintelligent Agents</title>
+  <title>面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）</title>
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="180x180">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -20,7 +20,7 @@
   <script defer src="site/library.js?v=20261007g"></script>
 </head>
 <body>
-<a class="skip" href="#library">Skip the film and open the paper library</a>
+<a class="skip" href="#library">跳过影片，打开论文库</a>
 
 <div class="film" id="film">
 <div class="stage" id="stage" aria-hidden="false">
@@ -33,96 +33,96 @@
 
     <!-- Scene 1 · the brief -->
     <div class="w chat rv" id="chat" style="--x:0;--y:0">
-      <div class="msg msg-user rv" data-show="0.95 99"><span class="who">You</span><p data-type="1.05 2.05" data-full="Build a working prototype that meets user needs. Budget under $10K, battery life over 8 hours, weight under 300 g. Deadline: Q2."></p><div class="msg-attach rv" data-show="2.0 99"><span>Resources</span><span>Assembly plan</span></div></div>
-      <div class="msg msg-agent rv" data-show="2.15 99"><span class="who">Agent</span><p>Understood. Building to the brief.</p></div>
-      <div class="msg msg-agent msg-first"><span class="who">Agent · unprompted</span><p>The battery supplier slipped two weeks. I re-sequenced assembly so we still land in Q2 and drafted the revised plan. Send it to the team?</p><div class="msg-actions"><span>Review plan</span><span>Not now</span></div></div>
-      <div class="chat-input"><span class="caret"></span><span id="chat-ph">Waiting for instructions</span></div>
+      <div class="msg msg-user rv" data-show="0.95 99"><span class="who">你</span><p data-type="1.05 2.05" data-full="构建满足用户需求、可正常工作的原型。预算低于 1 万美元，续航超过 8 小时，重量低于 300 克。截止时间：第二季度。"></p><div class="msg-attach rv" data-show="2.0 99"><span>资源</span><span>装配计划</span></div></div>
+      <div class="msg msg-agent rv" data-show="2.15 99"><span class="who">智能体（Agent）</span><p>明白。正在按任务说明构建。</p></div>
+      <div class="msg msg-agent msg-first"><span class="who">智能体（Agent）· 主动发起</span><p>电池供应商延迟了两周。我已调整装配顺序，确保仍在第二季度完成，并拟好了修订计划。要发给团队吗？</p><div class="msg-actions"><span>查看计划</span><span>暂时不用</span></div></div>
+      <div class="chat-input"><span class="caret"></span><span id="chat-ph">等待指令</span></div>
     </div>
 
     <!-- Scene 2 · the task execution space, laid out as in the survey's figure: a solid sheet for what the
          brief states, and open slots for what it leaves undecided. The brief turns into the sheet in place;
          the agent's light climbs the line between the two, then fills the open slots one by one. -->
     <div class="scene" id="scene-space">
-    <div class="w space-title rv" data-show="3.62 31.5" style="--x:408;--y:-978">Task execution space</div>
-    <div class="w side-tag side-explicit rv" data-show="3.45 31.5" style="--x:0;--y:-868"><b>Explicit task instructions</b><span>What the brief states</span></div>
-    <div class="w side-tag side-residual rv" data-show="3.78 31.5" style="--x:806;--y:-868"><b>Residual decision space</b><span>What the brief leaves open</span></div>
+    <div class="w space-title rv" data-show="3.62 31.5" style="--x:408;--y:-978">任务执行空间</div>
+    <div class="w side-tag side-explicit rv" data-show="3.45 31.5" style="--x:0;--y:-868"><b>明确的任务指令</b><span>任务说明中已明确的内容</span></div>
+    <div class="w side-tag side-residual rv" data-show="3.78 31.5" style="--x:806;--y:-868"><b>剩余决策空间（Residual decision space）</b><span>任务说明中尚未明确的内容</span></div>
     <div class="w spec rv" data-show="3.33 31.5" style="--x:0;--y:-260">
-      <section class="rv" data-show="3.45 99"><h4>Goal</h4><p>Build a working prototype that meets user needs</p></section>
-      <section class="rv" data-show="3.53 99"><h4>Constraints</h4><ul><li>Budget &lt; $10K</li><li>Battery life &gt; 8 hours</li><li>Weight &lt; 300 g</li><li>Deadline: Q2</li></ul></section>
-      <section class="rv" data-show="3.61 99"><h4>Resources</h4><ul><li>Schematics</li><li>Component inventory</li><li>Test procedures</li><li>3D CAD files</li><li>Team contacts</li></ul></section>
-      <section class="rv" data-show="3.69 99"><h4>Assembly plan</h4><ul class="checks-row"><li>Place PCB</li><li>Connect sensors</li><li>Install battery</li><li>Secure housing</li><li>Run diagnostics</li></ul></section>
+      <section class="rv" data-show="3.45 99"><h4>目标</h4><p>构建满足用户需求、可正常工作的原型</p></section>
+      <section class="rv" data-show="3.53 99"><h4>约束</h4><ul><li>预算 &lt; 1 万美元</li><li>续航 &gt; 8 小时</li><li>重量 &lt; 300 克</li><li>截止时间：第二季度</li></ul></section>
+      <section class="rv" data-show="3.61 99"><h4>资源</h4><ul><li>电路原理图</li><li>元器件清单</li><li>测试流程</li><li>3D CAD 文件</li><li>团队联系方式</li></ul></section>
+      <section class="rv" data-show="3.69 99"><h4>装配计划</h4><ul class="checks-row"><li>放置 PCB</li><li>连接传感器</li><li>安装电池</li><li>固定外壳</li><li>运行诊断</li></ul></section>
     </div>
     <div class="w open-node rv" data-show="3.86 31.5" data-zone="0" style="--x:398;--y:-648"><i>?</i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-2.6 6.2a2.7 2.7 0 0 0 5.2 0L5 7zM19 7l-2.6 6.2a2.7 2.7 0 0 0 5.2 0L19 7z"/></svg></div>
-    <div class="w open-card rv" data-show="3.88 31.5" data-zone="0" style="--x:813;--y:-648"><h3>Preference and trade-off decisions</h3><div class="open-fill"><span class="open-blank">Not specified</span><p>Battery life or weight: which gives way first?</p></div></div>
+    <div class="w open-card rv" data-show="3.88 31.5" data-zone="0" style="--x:813;--y:-648"><h3>偏好与权衡决策</h3><div class="open-fill"><span class="open-blank">未明确</span><p>续航与重量：优先牺牲哪一项？</p></div></div>
     <div class="w open-node rv" data-show="3.92 31.5" data-zone="1" style="--x:398;--y:-390"><i>?</i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></div>
-    <div class="w open-card rv" data-show="3.94 31.5" data-zone="1" style="--x:813;--y:-390"><h3>Procedural underspecification</h3><div class="open-fill"><span class="open-blank">Not specified</span><p>Which order should assembly and testing follow?</p></div></div>
+    <div class="w open-card rv" data-show="3.94 31.5" data-zone="1" style="--x:813;--y:-390"><h3>流程规定不足</h3><div class="open-fill"><span class="open-blank">未明确</span><p>装配与测试应按什么顺序进行？</p></div></div>
     <div class="w open-node rv" data-show="3.98 31.5" data-zone="2" style="--x:398;--y:-132"><i>?</i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 2.8v5.4c0 4.4-2.9 7.6-7 9.8-4.1-2.2-7-5.4-7-9.8V5.8L12 3z"/><path d="M12 8v5M12 16.2v.1"/></svg></div>
-    <div class="w open-card rv" data-show="4.00 31.5" data-zone="2" style="--x:813;--y:-132"><h3>Contingency and risk underspecification</h3><div class="open-fill"><span class="open-blank">Not specified</span><p>What if a component is back-ordered?</p></div></div>
+    <div class="w open-card rv" data-show="4.00 31.5" data-zone="2" style="--x:813;--y:-132"><h3>突发情况与风险规定不足</h3><div class="open-fill"><span class="open-blank">未明确</span><p>如果某个元器件缺货怎么办？</p></div></div>
     <div class="w open-node rv" data-show="4.04 31.5" data-zone="3" style="--x:398;--y:126"><i>?</i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9M12 12L6.5 6.5M12 12l5.5-5.5"/><path d="M6.5 10.5v-4h4M17.5 10.5v-4h-4"/></svg></div>
-    <div class="w open-card rv" data-show="4.06 31.5" data-zone="3" style="--x:813;--y:126"><h3>Adaptive replanning</h3><div class="open-fill"><span class="open-blank">Not specified</span><p>The deadline moved. What changes now?</p></div></div>
+    <div class="w open-card rv" data-show="4.06 31.5" data-zone="3" style="--x:813;--y:126"><h3>自适应重规划</h3><div class="open-fill"><span class="open-blank">未明确</span><p>截止时间变了。现在要调整什么？</p></div></div>
 
     </div>
 
     <!-- Scene 3 · the reactivity–proactivity spectrum -->
     <div class="scene" id="scene-spectrum">
-    <div class="w rail-end rv" data-show="6.3 99" style="--x:2560;--y:-70">Reactive</div>
-    <div class="w rail-end rail-end-r rv" data-show="6.3 99" style="--x:5640;--y:-70">More proactive</div>
+    <div class="w rail-end rv" data-show="6.3 99" style="--x:2560;--y:-70">被动响应</div>
+    <div class="w rail-end rail-end-r rv" data-show="6.3 99" style="--x:5640;--y:-70">更加主动</div>
 
     <div class="w station rv" data-show="6.45 99" style="--x:2900;--y:-250">
       <div class="scene-card">
-        <p class="line line-h"><span>Human</span>Good! Now close the lid and perform a test print.</p>
-        <p class="line line-a"><span>Agent</span>Understood. Preparing for test print…</p>
+        <p class="line line-h"><span>人类</span>很好！现在合上盖子，进行测试打印。</p>
+        <p class="line line-a"><span>智能体（Agent）</span>明白。正在准备测试打印……</p>
       </div>
     </div>
     <div class="w roles rv" data-show="6.45 99" style="--x:2900;--y:215">
-      <p><span>Agent provides</span>Reactive response</p>
-      <p><span>Human’s role</span>Operator</p>
+      <p><span>智能体（Agent）提供</span>被动响应</p>
+      <p><span>人类的角色</span>操作者</p>
     </div>
 
     <div class="w station rv" data-show="7.3 99" style="--x:4100;--y:-250">
       <div class="scene-card">
-        <p class="card-title">Proposed work plan</p>
-        <ul class="checks"><li class="ok">Draft Q2 market analysis</li><li class="ok">Review competitor updates</li><li class="ok">Prepare budget forecast</li><li>Schedule stakeholder sync</li></ul>
+        <p class="card-title">拟议工作计划</p>
+        <ul class="checks"><li class="ok">起草第二季度市场分析</li><li class="ok">审阅竞品动态</li><li class="ok">准备预算预测</li><li>安排利益相关方同步会议</li></ul>
       </div>
     </div>
     <div class="w roles rv" data-show="7.3 99" style="--x:4100;--y:215">
-      <p><span>Agent provides</span>Mixed-initiative assistance</p>
-      <p><span>Human’s role</span>Collaborator</p>
+      <p><span>智能体（Agent）提供</span>混合主动式辅助（Mixed-initiative assistance）</p>
+      <p><span>人类的角色</span>协作者</p>
     </div>
 
     <div class="w station rv" data-show="8.15 99" style="--x:5300;--y:-250">
       <div class="scene-card scene-card-warm">
-        <p class="card-title">Work progress update</p>
-        <ul class="checks"><li class="ok">Q2 analysis completed</li><li class="ok">Competitor report delivered</li><li class="ok">Budget forecast ready</li><li class="ok">Stakeholder sync scheduled</li></ul>
-        <p class="next">Next up · Product roadmap review</p>
+        <p class="card-title">工作进度更新</p>
+        <ul class="checks"><li class="ok">第二季度分析已完成</li><li class="ok">竞品报告已交付</li><li class="ok">预算预测已就绪</li><li class="ok">利益相关方同步会议已安排</li></ul>
+        <p class="next">下一步 · 产品路线图评审</p>
       </div>
     </div>
     <div class="w roles rv" data-show="8.15 99" style="--x:5300;--y:215">
-      <p><span>Agent provides</span>Self-initiated agency</p>
-      <p><span>Human’s role</span>Reviewer</p>
+      <p><span>智能体（Agent）提供</span>自发能动性（Self-initiated agency）</p>
+      <p><span>人类的角色</span>审阅者</p>
     </div>
 
     </div>
 
     <!-- Scene 4 · lineage (vertical crane shot) -->
     <div class="scene" id="scene-lineage">
-    <div class="w era era-l rv" data-show="9.45 99" style="--x:6720;--y:-1100"><span class="era-y">1940s–1950s</span><h3>Control and cybernetics</h3><span class="era-root">Root of Awareness · Action · Adaptation</span><p>Feedback control and cybernetic principles laid the foundation for self-regulating systems.</p></div>
-    <div class="w era era-r rv" data-show="9.9 99" style="--x:6880;--y:-460"><span class="era-y">1960s–1970s</span><h3>Planning and world models</h3><span class="era-root">Root of Anticipation</span><p>Early planning research let machines reason about future states and actions.</p></div>
-    <div class="w era era-l rv" data-show="10.35 99" style="--x:6720;--y:180"><span class="era-y">1980s–1990s</span><h3>BDI and agent theory</h3><span class="era-root">Root of Agenda</span><p>Belief–desire–intention models formalized how agents reason and act toward goals.</p></div>
-    <div class="w era era-r rv" data-show="10.8 99" style="--x:6880;--y:820"><span class="era-y">1990s–2000s</span><h3>Ubiquitous and context-aware computing</h3><span class="era-root">Root of Awareness</span><p>Computing moved into everyday life, and systems began to sense context and adapt.</p></div>
-    <div class="w era era-l rv" data-show="11.25 99" style="--x:6720;--y:1460"><span class="era-y">2000s–2010s</span><h3>Mixed-initiative interaction</h3><span class="era-root">Root of Arbitration</span><p>Systems combined user input with agent suggestions and actions to support collaboration.</p></div>
-    <div class="w era era-r rv" data-show="11.7 99" style="--x:6880;--y:2100"><span class="era-y">2000s–2010s</span><h3>Goal reasoning and intrinsic motivation</h3><span class="era-root">Root of Agenda</span><p>Agents learned to generate goals, prioritize them, and pursue what matters.</p></div>
-    <div class="w era era-l rv" data-show="12.15 99" style="--x:6720;--y:2740"><span class="era-y">2010s–2020s</span><h3>Foundation models and tool-using agents</h3><p>Language models and tools enabled flexible reasoning and execution across real-world tasks.</p></div>
+    <div class="w era era-l rv" data-show="9.45 99" style="--x:6720;--y:-1100"><span class="era-y">1940—1950 年代</span><h3>控制与控制论</h3><span class="era-root">感知（Awareness）· 行动（Action）· 适应（Adaptation）的源头</span><p>反馈控制与控制论原理为自调节系统奠定了基础。</p></div>
+    <div class="w era era-r rv" data-show="9.9 99" style="--x:6880;--y:-460"><span class="era-y">1960—1970 年代</span><h3>规划与世界模型</h3><span class="era-root">前瞻（Anticipation）的源头</span><p>早期规划研究使机器能够推理未来的状态与行动。</p></div>
+    <div class="w era era-l rv" data-show="10.35 99" style="--x:6720;--y:180"><span class="era-y">1980—1990 年代</span><h3>BDI 与智能体（Agent）理论</h3><span class="era-root">议程（Agenda）的源头</span><p>信念—愿望—意图（BDI）模型形式化描述了智能体（Agent）如何围绕目标推理和行动。</p></div>
+    <div class="w era era-r rv" data-show="10.8 99" style="--x:6880;--y:820"><span class="era-y">1990—2000 年代</span><h3>普适计算与情境感知计算</h3><span class="era-root">感知（Awareness）的源头</span><p>计算融入日常生活，系统开始感知情境并作出适应。</p></div>
+    <div class="w era era-l rv" data-show="11.25 99" style="--x:6720;--y:1460"><span class="era-y">2000—2010 年代</span><h3>混合主动式交互（Mixed-initiative interaction）</h3><span class="era-root">仲裁（Arbitration）的源头</span><p>系统结合用户输入与智能体（Agent）的建议和行动，以支持协作。</p></div>
+    <div class="w era era-r rv" data-show="11.7 99" style="--x:6880;--y:2100"><span class="era-y">2000—2010 年代</span><h3>目标推理与内在动机</h3><span class="era-root">议程（Agenda）的源头</span><p>智能体（Agent）学会了生成目标、确定优先级，并追求重要的事项。</p></div>
+    <div class="w era era-l rv" data-show="12.15 99" style="--x:6720;--y:2740"><span class="era-y">2010—2020 年代</span><h3>基础模型与使用工具的智能体（Agent）</h3><p>语言模型与工具使系统能够在现实世界任务中灵活推理和执行。</p></div>
     <div class="w era-end rv" data-show="12.8 99" style="--x:6800;--y:3520">
-      <h3>Proactive AI agents</h3>
-      <div class="chips"><span style="--h:var(--aw)">Awareness</span><span style="--h:var(--an)">Anticipation</span><span style="--h:var(--ag)">Agenda</span><span style="--h:var(--ar)">Arbitration</span><span style="--h:var(--ac)">Action</span><span style="--h:var(--ad)">Adaptation</span></div>
+      <h3>主动式 AI 智能体（Proactive AI agents）</h3>
+      <div class="chips"><span style="--h:var(--aw)">感知（Awareness）</span><span style="--h:var(--an)">前瞻（Anticipation）</span><span style="--h:var(--ag)">议程（Agenda）</span><span style="--h:var(--ar)">仲裁（Arbitration）</span><span style="--h:var(--ac)">行动（Action）</span><span style="--h:var(--ad)">适应（Adaptation）</span></div>
     </div>
 
     </div>
 
     <!-- Scene 5–6 · the 6A ring and evaluation rings are generated in story.js -->
     <div class="scene" id="scene-ring">
-    <div class="w up ring-core rv" data-show="14.15 99" style="--x:6800;--y:5440"><b>6A</b><span>proactive<br>discretion</span></div>
+    <div class="w up ring-core rv" data-show="14.15 99" style="--x:6800;--y:5440"><b>6A</b><span>主动<br>裁量</span></div>
     <div id="ring-layer"></div>
     <div id="eval-layer"></div>
 
@@ -132,9 +132,9 @@
     <div class="scene" id="scene-field">
     <div id="map-layer"></div>
 
-    <div class="w trend rv" data-show="27.95 99" style="--x:10200;--y:6700"><span class="trend-n">Trend 1</span><p>A shared architecture with domain-specific specialization</p></div>
-    <div class="w trend rv" data-show="28.35 99" style="--x:10800;--y:6700"><span class="trend-n">Trend 2</span><p>From assisting humans to carrying workflows</p></div>
-    <div class="w trend rv" data-show="28.75 99" style="--x:11400;--y:6700"><span class="trend-n">Trend 3</span><p>Verification and feedback infrastructure is a key constraint</p></div>
+    <div class="w trend rv" data-show="27.95 99" style="--x:10200;--y:6700"><span class="trend-n">趋势 1</span><p>共享架构与领域专门化相结合</p></div>
+    <div class="w trend rv" data-show="28.35 99" style="--x:10800;--y:6700"><span class="trend-n">趋势 2</span><p>从辅助人类到承担工作流</p></div>
+    <div class="w trend rv" data-show="28.75 99" style="--x:11400;--y:6700"><span class="trend-n">趋势 3</span><p>验证与反馈基础设施是关键制约</p></div>
 
     </div>
 
@@ -142,27 +142,27 @@
          high example, then the question of trust, then the autonomy that follows. Columns sit at x = 13780
          (capability), 14326 (low) and 14938 (high); the light comes down the line between low and high (TRUST in story.js). -->
     <div class="scene" id="scene-trust">
-    <div class="w col-head rv" data-show="29.22 99" style="--x:14326;--y:4762">Low</div>
-    <div class="w col-head col-high rv" data-show="29.22 99" style="--x:14938;--y:4762">High</div>
+    <div class="w col-head rv" data-show="29.22 99" style="--x:14326;--y:4762">低</div>
+    <div class="w col-head col-high rv" data-show="29.22 99" style="--x:14938;--y:4762">高</div>
 
-    <div class="w pill rv" data-show="29.22 99" style="--x:13780;--y:4900"><b>Intelligence</b><span>Understanding and reasoning</span></div>
-    <div class="w say say-low rv" data-show="29.26 99" style="--x:14326;--y:4900"><span>Intelligence</span>“Wait - what should I do?”</div>
-    <div class="w say say-high rv" data-show="29.3 99" data-trust="0" style="--x:14938;--y:4900"><span>Intelligence</span>“I’ve got this.”</div>
+    <div class="w pill rv" data-show="29.22 99" style="--x:13780;--y:4900"><b>智能（Intelligence）</b><span>理解与推理</span></div>
+    <div class="w say say-low rv" data-show="29.26 99" style="--x:14326;--y:4900"><span>智能（Intelligence）</span>“等等——我该做什么？”</div>
+    <div class="w say say-high rv" data-show="29.3 99" data-trust="0" style="--x:14938;--y:4900"><span>智能（Intelligence）</span>“这件事我能搞定。”</div>
 
-    <div class="w pill rv" data-show="29.28 99" style="--x:13780;--y:5100"><b>Alignment</b><span>Aligning actions with the user’s intents, values, and constraints</span></div>
-    <div class="w say say-low rv" data-show="29.32 99" style="--x:14326;--y:5100"><span>Alignment</span>“Get the result.<br>However it takes.”</div>
-    <div class="w say say-high rv" data-show="29.36 99" data-trust="1" style="--x:14938;--y:5100"><span>Alignment</span>“I’ll succeed, and<br>succeed cleanly.”</div>
+    <div class="w pill rv" data-show="29.28 99" style="--x:13780;--y:5100"><b>对齐（Alignment）</b><span>使行动符合用户的意图、价值观与约束</span></div>
+    <div class="w say say-low rv" data-show="29.32 99" style="--x:14326;--y:5100"><span>对齐（Alignment）</span>“拿到结果。<br>不择手段也行。”</div>
+    <div class="w say say-high rv" data-show="29.36 99" data-trust="1" style="--x:14938;--y:5100"><span>对齐（Alignment）</span>“我会成功，<br>也会以正当的方式成功。”</div>
 
-    <div class="w pill rv" data-show="29.34 99" style="--x:13780;--y:5300"><b>Proactiveness</b><span>Taking the initiative to act</span></div>
-    <div class="w say say-low rv" data-show="29.38 99" style="--x:14326;--y:5300"><span>Proactiveness</span>“Plans broken. Waiting for<br>your call on what to do next.”</div>
-    <div class="w say say-high rv" data-show="29.42 99" data-trust="2" style="--x:14938;--y:5300"><span>Proactiveness</span>“Plan shifted, so I started<br>working a way around it,<br>open to your steer.”</div>
+    <div class="w pill rv" data-show="29.34 99" style="--x:13780;--y:5300"><b>主动性（Proactiveness）</b><span>主动采取行动</span></div>
+    <div class="w say say-low rv" data-show="29.38 99" style="--x:14326;--y:5300"><span>主动性（Proactiveness）</span>“计划行不通了。等待<br>你决定下一步做什么。”</div>
+    <div class="w say say-high rv" data-show="29.42 99" data-trust="2" style="--x:14938;--y:5300"><span>主动性（Proactiveness）</span>“计划有变，所以我已着手<br>寻找解决办法，<br>随时接受你的引导。”</div>
 
-    <div class="w trust rv" data-show="29.5 99" style="--x:14632;--y:5490"><b>Trust</b><span>earned?</span></div>
+    <div class="w trust rv" data-show="29.5 99" style="--x:14632;--y:5490"><b>信任</b><span>赢得了吗？</span></div>
 
-    <div class="w pill rv" data-show="29.56 99" style="--x:13780;--y:5680"><b>Autonomy</b><span>How independently it is allowed to act</span></div>
-    <div class="w auto auto-low rv" data-show="29.6 99" style="--x:14326;--y:5680"><span>Autonomy</span><p>Needs permission before acting</p></div>
+    <div class="w pill rv" data-show="29.56 99" style="--x:13780;--y:5680"><b>自主权（Autonomy）</b><span>被允许独立行动的程度</span></div>
+    <div class="w auto auto-low rv" data-show="29.6 99" style="--x:14326;--y:5680"><span>自主权（Autonomy）</span><p>行动前需要许可</p></div>
     <div class="w auto-arrow rv" data-show="29.64 99" style="--x:14632;--y:5680" aria-hidden="true">→</div>
-    <div class="w auto auto-high rv" data-show="29.64 99" style="--x:14938;--y:5680"><span>Autonomy</span><p>Acts independently within guardrails</p></div>
+    <div class="w auto auto-high rv" data-show="29.64 99" style="--x:14938;--y:5680"><span>自主权（Autonomy）</span><p>在边界内独立行动</p></div>
     </div>
   </div>
   </div>
@@ -176,11 +176,11 @@
   <!-- ===================== CAPTIONS: screen-space narration ===================== -->
   <div class="captions" id="captions">
     <section class="cap cap-open cap-title rv at-rest" data-show="-9 -2.35">
-      <h1><em>Proactive AI</em> for <em>Superintelligent Agents</em></h1>
-      <p class="lede">AI agents can reason, plan, use tools, and carry out long-horizon tasks.</p>
-      <p class="punch">Many still rely on a person to <em>identify worthwhile work</em>, and to start it.</p>
+      <h1><em>主动式 AI（Proactive AI）</em>：面向<em>超级智能体（Superintelligent Agents）</em></h1>
+      <p class="lede">AI 智能体（Agent）能够推理、规划、使用工具，并执行长时程任务。</p>
+      <p class="punch">许多智能体仍依赖人类来 <em>识别值得做的工作</em>，并启动这些工作。</p>
       <div class="inst">
-        <p class="inst-k">A joint survey from</p>
+        <p class="inst-k">联合综述，来自</p>
         <ul class="inst-logos" id="inst-list">
           <li style="--s:1"><img src="assets/logos/illinois.png" alt="University of Illinois Urbana-Champaign" width="91" height="132"></li>
           <li style="--s:.62"><img src="assets/logos/google.png" alt="Google" width="410" height="132"></li>
@@ -189,157 +189,157 @@
           <li style="--s:1"><img src="assets/logos/cmu.png" alt="Carnegie Mellon University" width="207" height="132"></li>
         </ul>
       </div>
-      <p class="scope" id="scope"><b data-scope="papers">1,410</b> works cited <span>·</span> <b data-scope="systems">80</b> representative works analyzed in depth <span>·</span> <b>13</b> application domains</p>
+      <p class="scope" id="scope"><b data-scope="papers">1,410</b> 篇被引文献 <span>·</span> <b data-scope="systems">80</b> 项深入分析的代表性工作 <span>·</span> <b>13</b> 个应用领域</p>
     </section>
 
     <section class="cap cap-open open-split rv" data-show="-2.25 -1.2">
       <div class="open-head">
-        <p class="kicker">Why it matters</p>
-        <h2>A capable agent can still depend on someone else to <em>notice the work</em>.</h2>
+        <p class="kicker">为何重要</p>
+        <h2>能力出众的智能体（Agent）仍可能依赖他人来 <em>发现待办工作</em>。</h2>
       </div>
       <div class="open-body">
-        <p class="lede">It can finish the assigned task while a person still has to notice what needs doing next.</p>
-        <p>Long-horizon work cannot be fully specified at the outset. Proactiveness reduces the burden of monitoring and re-instructing.</p>
+        <p class="lede">它能够完成分配的任务，但接下来需要做什么，仍须由人来发现。</p>
+        <p>长时程工作无法在一开始就被完整规定。主动性（Proactiveness）能减轻监控和反复下达指令的负担。</p>
       </div>
     </section>
 
     <section class="cap cap-open open-three rv" data-show="-1.1 -0.05">
       <div class="open-head">
-        <p class="kicker">Why superintelligence needs it</p>
-        <h2>Intelligence and alignment leave one capability <em>unaccounted for</em>.</h2>
+        <p class="kicker">超级智能为何需要它</p>
+        <h2>智能（Intelligence）与对齐（Alignment）仍有一种能力 <em>尚未涵盖</em>。</h2>
       </div>
       <ul class="triad">
-        <li><b>Intelligence</b><span>expands what an agent can accomplish.</span></li>
-        <li><b>Alignment</b><span>concerns whether its behavior serves human intentions and values.</span></li>
-        <li class="triad-on"><b>Proactiveness</b><span>adds the capacity to recognize worthwhile work and initiate it without an explicit request.</span></li>
+        <li><b>智能（Intelligence）</b><span>扩展了智能体（Agent）能够完成的事项。</span></li>
+        <li><b>对齐（Alignment）</b><span>关注其行为是否服务于人类的意图与价值观。</span></li>
+        <li class="triad-on"><b>主动性（Proactiveness）</b><span>补足了识别值得做的工作，并在未收到明确请求时主动发起的能力。</span></li>
       </ul>
-      <p class="open-foot">The goal is calibrated initiative. Acting too readily interrupts people, pursues mistaken goals, or exceeds granted authority. Hesitating too much leaves important needs unaddressed.</p>
+      <p class="open-foot">目标是经过校准的主动性。过于轻率地行动会打扰人类、追逐错误目标，或超出授予的权限。过度犹豫则会让重要需求得不到回应。</p>
     </section>
 
     <section class="cap rv" data-show="0.1 3.05">
-      <p class="kicker">Reactive</p>
-      <h2>The agent acts when asked.</h2>
-      <p>Given a brief, a reactive agent works to fulfil it. A person has already identified the work to be done, and anything the brief leaves open waits for the next instruction.</p>
+      <p class="kicker">被动响应</p>
+      <h2>智能体（Agent）在收到请求时行动。</h2>
+      <p>收到任务说明后，被动响应式智能体（Agent）便着手完成。需要做的工作已由人类识别，而任务说明中尚未明确的事项，则等待下一条指令。</p>
     </section>
 
     <section class="cap rv" data-show="3.25 4.5">
-      <p class="kicker">Task execution space</p>
-      <h2>An instruction specifies only part of the work.</h2>
-      <p>The brief states a goal, constraints, resources and a plan: the <b class="t-cold">explicit task instructions</b>. What it leaves undecided is the <b class="t-spark">residual decision space</b>.</p>
+      <p class="kicker">任务执行空间</p>
+      <h2>一条指令只规定了部分工作。</h2>
+      <p>任务说明列明了目标、约束、资源与计划，即 <b class="t-cold">明确的任务指令</b>。其中尚未决定的部分，就是 <b class="t-spark">剩余决策空间（Residual decision space）</b>。</p>
     </section>
 
     <section class="cap rv" data-show="4.5 6.3">
-      <p class="kicker">Definition</p>
-      <h2>Initiative lives in what the instruction leaves open.</h2>
-      <blockquote>Proactiveness is the ability to exercise <em>delegated residual discretion</em>.</blockquote>
-      <p>A proactive agent resolves trade-offs, fills procedural gaps, handles contingencies and replans, while respecting the task’s stated goals and constraints.</p>
+      <p class="kicker">定义</p>
+      <h2>主动性存在于指令尚未明确的空间中。</h2>
+      <blockquote>主动性（Proactiveness）是行使 <em>受托剩余裁量权（delegated residual discretion）的能力</em>。</blockquote>
+      <p>主动式智能体（Agent）在遵守任务既定目标与约束的同时，处理权衡、填补流程空白、应对突发情况，并重新规划。</p>
     </section>
 
     <section class="cap rv" data-show="6.45 7.45">
-      <p class="kicker">Spectrum · reactive</p>
-      <h2>Reactive response</h2>
-      <p>The agent follows step-by-step instructions. The human operates it, one command at a time. Reactivity and proactiveness are two ends of one spectrum, and most fielded systems sit between them.</p>
+      <p class="kicker">连续谱 · 被动响应</p>
+      <h2>被动响应</h2>
+      <p>智能体（Agent）遵循逐步指令，人类通过一条条命令操作它。被动响应性与主动性（Proactiveness）处于同一连续谱的两端，大多数已投入使用的系统位于两者之间。</p>
     </section>
     <section class="cap rv" data-show="7.45 8.3">
-      <p class="kicker">Spectrum · mixed initiative</p>
-      <h2>Mixed-initiative assistance</h2>
-      <p>The agent proposes a plan and the human steers it. The human becomes a collaborator.</p>
+      <p class="kicker">连续谱 · 混合主动（Mixed-initiative）</p>
+      <h2>混合主动式辅助（Mixed-initiative assistance）</h2>
+      <p>智能体（Agent）提出计划，人类给予引导。人类成为协作者。</p>
     </section>
     <section class="cap rv" data-show="8.3 9.25">
-      <p class="kicker">Spectrum · self-initiated</p>
-      <h2>Self-initiated agency</h2>
-      <p>The agent advances the work and reports progress. The human becomes a reviewer.</p>
+      <p class="kicker">连续谱 · 自发发起</p>
+      <h2>自发能动性（Self-initiated agency）</h2>
+      <p>智能体（Agent）推进工作并汇报进度。人类成为审阅者。</p>
     </section>
 
     <section class="cap rv" data-show="9.45 11.5">
-      <p class="kicker">Lineage</p>
-      <h2>Proactive agency renews a much older agenda.</h2>
-      <p>Proactive agency draws on control theory, planning, agent theory, ubiquitous computing, mixed-initiative interaction and goal reasoning. Each tradition expanded the decisions an agent can make beyond a fully specified objective.</p>
+      <p class="kicker">历史脉络</p>
+      <h2>主动能动性延续了一个由来已久的研究议题。</h2>
+      <p>主动能动性汲取了控制论、规划、智能体（Agent）理论、普适计算、混合主动式交互（Mixed-initiative interaction）与目标推理的成果。每一条研究传统都将智能体可作出的决策，拓展到完全规定的目标之外。</p>
     </section>
     <section class="cap rv" data-show="11.5 13.45">
-      <p class="kicker">Lineage</p>
-      <h2>Foundation models recombine these traditions.</h2>
-      <p>They integrate the earlier mechanisms in open-ended, language-mediated settings. That makes proactivity more general, and calibrated proactivity more necessary: when should the agent move first, how far should it go, and when must it ask, defer, or stay silent?</p>
+      <p class="kicker">历史脉络</p>
+      <h2>基础模型重新融合了这些研究传统。</h2>
+      <p>它们在开放、以语言为媒介的情境中整合早期机制。这让主动性（Proactiveness）更加通用，也使经过校准的主动性更为必要：智能体（Agent）何时应先行一步，应推进到什么程度，又何时必须询问、暂缓或保持沉默？</p>
     </section>
 
     <section class="cap rv" data-show="13.6 15.15">
-      <p class="kicker">Mechanism</p>
-      <h2>Six capacities turn context into calibrated initiative.</h2>
-      <p>Awareness maintains the situation and anticipation identifies future needs. Agenda formation turns them into commitments. Arbitration decides whether intervention is warranted. Action intervenes within authority. Adaptation learns from the result.</p>
-      <p class="keyline"><b>Anticipation and Arbitration address two distinctive demands of self-initiated work.</b> The other four have established roles in general AI agents, and their proactive forms can require substantial changes.</p>
+      <p class="kicker">机制</p>
+      <h2>六项能力将情境转化为经过校准的主动性。</h2>
+      <p>感知（Awareness）持续掌握局势，前瞻（Anticipation）识别未来需求。议程（Agenda）形成过程将需求转化为行动承诺。仲裁（Arbitration）判断是否应当介入。行动（Action）在权限范围内实施干预。适应（Adaptation）从结果中学习。</p>
+      <p class="keyline"><b>前瞻（Anticipation）与仲裁（Arbitration）回应了自发发起工作所特有的两项要求。</b> 其余四项在通用 AI 智能体（Agent）中已有成熟作用，但其主动式形态可能需要大幅调整。</p>
     </section>
 
     <div id="cap-capacities"></div>
 
     <section class="cap rv" data-show="21.6 22.55">
-      <p class="kicker">The loop closes</p>
-      <h2>Adaptation feeds every other capacity.</h2>
-      <p>Fast reflection corrects a single intervention. Slow calibration adjusts how much initiative the agent should take next time, and with whom.</p>
+      <p class="kicker">闭环形成</p>
+      <h2>适应（Adaptation）为其余所有能力提供反馈。</h2>
+      <p>快速反思纠正单次干预。慢速校准则调整智能体（Agent）下次应对谁展现多大程度的主动性。</p>
     </section>
 
     <div id="cap-evaluation"></div>
 
     <section class="cap rv" data-show="24.8 25.75">
-      <p class="kicker">Applications · 13 domains</p>
-      <h2>Initiative and authority grow on different axes.</h2>
-      <p>Each bar spans where a domain’s agents get their tasks, from executing an instruction to pursuing a standing mandate. Its row shows what they are permitted to do on their first move, and its number counts the representative works the survey analyzes in depth. No domain has reached the fifth rung, where agents generate their own agenda.</p>
+      <p class="kicker">应用 · 13 个领域</p>
+      <h2>主动性与权限沿不同轴线增长。</h2>
+      <p>每条横条表示某领域智能体（Agent）的任务来源范围，从执行指令到履行长期授权。所在行表示它们首次行动时获准做什么，数字则表示综述深入分析的代表性工作数量。尚无领域达到第五级，即由智能体自行生成议程（Agenda）。</p>
     </section>
     <section class="cap rv" data-show="25.75 26.85">
-      <p class="kicker">Authority · gated action</p>
-      <h2>Most domains act behind a gate.</h2>
-      <p>Coding and GUI agents already work from forecasts and standing mandates, yet their consequential steps still pass review. Healthcare and law remain clinician- and attorney-gated.</p>
+      <p class="kicker">权限 · 经审批的行动</p>
+      <h2>大多数领域的行动均设有审批关口。</h2>
+      <p>编程与 GUI 智能体（Agent）已能依据预测和长期授权开展工作，但其影响重大的步骤仍须经过审查。医疗与法律领域仍分别由临床医生和律师把关。</p>
     </section>
     <section class="cap rv" data-show="26.85 27.35">
-      <p class="kicker">Authority · suggestion</p>
-      <h2>Three domains only suggest.</h2>
-      <p>Information access, smart cities and education stay at suggestion, and entertainment spans suggestion and action. Their binding constraints differ: education and entertainment have slow or noisy feedback, smart cities have diffuse authority and public accountability, and for information access they are the user model and benchmark coverage of appropriate silence.</p>
+      <p class="kicker">权限 · 建议</p>
+      <h2>三个领域仅提供建议。</h2>
+      <p>信息获取、智慧城市与教育停留在建议层面，娱乐则横跨建议与行动。其主要制约各不相同：教育与娱乐的反馈缓慢或噪声较大；智慧城市的权责分散，并须对公众负责；信息获取则受制于用户模型，以及基准测试对适时保持沉默的覆盖程度。</p>
     </section>
     <section class="cap rv" data-show="27.35 27.9">
-      <p class="kicker">Authority · unsupervised</p>
-      <h2>No domain acts unsupervised.</h2>
-      <p>AutoResearch is the extreme case. Its systems can combine deep execution autonomy with task-scoped initiative under a human-specified top-level question, and they act inside a gate. Its binding constraints are novelty and significance, and the cost and latency of the physical oracle.</p>
+      <p class="kicker">权限 · 无监督</p>
+      <h2>尚无领域在无人监督下行动。</h2>
+      <p>AutoResearch 是极端案例。在人类指定的顶层问题下，其系统可将高度执行自主权（Autonomy）与任务范围内的主动性结合起来，且行动仍在审批关口内进行。其主要制约是新颖性与重要性，以及物理判定器（physical oracle）的成本与延迟。</p>
     </section>
     <section class="cap rv" data-show="27.9 29.15">
-      <p class="kicker">Across industries</p>
-      <h2>Three patterns recur across domains.</h2>
-      <p>Most systems pair a foundation-model core with domain-specific machinery. A growing subset executes extended workflows. Further improvement is constrained by verification and feedback infrastructure: how cheaply, quickly and reliably agents can learn from self-initiated actions.</p>
+      <p class="kicker">跨行业</p>
+      <h2>三个模式在各领域反复出现。</h2>
+      <p>大多数系统将基础模型核心与领域专用机制相结合。越来越多的系统开始执行长流程工作。进一步改进受制于验证与反馈基础设施：智能体（Agent）能以多低的成本、多快的速度、多高的可靠性，从自发行动中学习。</p>
     </section>
 
     <section class="cap rv" data-show="29.2 30.55">
-      <p class="kicker">Earned autonomy</p>
-      <h2>Autonomy is the authority humans grant.</h2>
-      <p>Intelligence provides the competence to reason and execute. Alignment directs it toward human intentions and values. Proactiveness enables its self-initiated use in the residual decision space. Exercised reliably, they establish a track record that can earn trust, and autonomy is granted on that demonstrated reliability.</p>
+      <p class="kicker">赢得自主权（Autonomy）</p>
+      <h2>自主权（Autonomy）是人类授予的权限。</h2>
+      <p>智能（Intelligence）提供推理与执行的能力。对齐（Alignment）使其朝向人类的意图与价值观。主动性（Proactiveness）使这些能力能在剩余决策空间（residual decision space）中自发运用。当它们得到可靠运用，就会积累赢得信任的过往记录；自主权（Autonomy）则基于这种已经证明的可靠性而被授予。</p>
     </section>
 
     <section class="cap cap-wide rv" data-show="30.65 31.45">
-      <p class="kicker">What comes next</p>
-      <h2>Toward calibrated proactiveness.</h2>
-      <p>The survey closes with three directions: advancing capability and its evaluation; governing initiative with safety boundaries, consent and accountability; and application frontiers from personal agents to embodied and interconnected ecosystems.</p>
+      <p class="kicker">未来方向</p>
+      <h2>迈向经过校准的主动性（Proactiveness）。</h2>
+      <p>综述最后提出三个方向：推进能力及其评估；以安全边界、同意与问责来治理主动性；以及从个人智能体（Agent）到具身、互联生态系统的应用前沿。</p>
     </section>
 
     <section class="cap rv" data-show="31.6 33.0">
-      <p class="kicker">Epilogue</p>
-      <h2>This time, the agent speaks first.</h2>
-      <p>It noticed a change, judged that acting was warranted, timely and acceptable, drafted a remedy within its authority, and left the decision with you.</p>
+      <p class="kicker">尾声</p>
+      <h2>这一次，智能体（Agent）先开口。</h2>
+      <p>它注意到变化，判断行动确有必要、时机合适且可被接受，在权限范围内拟好补救方案，并把决定权留给你。</p>
     </section>
   </div>
 
   <!-- ===================== CREDITS ===================== -->
   <section class="credits rv" id="credits" data-show="33.1 99" aria-labelledby="credits-title">
     <div class="credits-inner">
-      <p class="credits-line">From waiting for instructions to discovering worthwhile work.</p>
-      <h2 id="credits-title"><em>Proactive AI</em> for <em>Superintelligent Agents</em></h2>
+      <p class="credits-line">从等待指令，到发现值得做的工作。</p>
+      <h2 id="credits-title"><em>主动式 AI（Proactive AI）</em>：面向<em>超级智能体（Superintelligent Agents）</em></h2>
       <div class="credits-roll">
-        <p class="credits-k">Written by</p>
-        <p class="credits-authors" id="credit-authors">Ke Yang, Jiateng Liu, and colleagues</p>
-        <p class="credits-k">With</p>
+        <p class="credits-k">作者</p>
+        <p class="credits-authors" id="credit-authors">Ke Yang、Jiateng Liu 及同事</p>
+        <p class="credits-k">参与机构</p>
         <p class="credits-aff" id="credit-aff">University of Illinois Urbana-Champaign</p>
       </div>
       <div class="credits-actions">
-        <a class="btn btn-solid" id="link-paper" href="Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
+        <a class="btn btn-solid" id="link-paper" href="Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">阅读论文 ↗</a>
         <a class="btn" id="link-google" href="https://research.google/pubs/proactive-ai-for-superintelligent-agents/" target="_blank" rel="noopener">Google Research ↗</a>
-        <a class="btn" id="link-github" href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents">GitHub repository ↗</a>
-        <button class="btn" id="copy-bib" type="button">Copy BibTeX</button>
+        <a class="btn" id="link-github" href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents">GitHub 仓库 ↗</a>
+        <button class="btn" id="copy-bib" type="button">复制 BibTeX</button>
       </div>
       <pre class="bib" id="bib" hidden></pre>
     </div>
@@ -347,12 +347,12 @@
 
   <!-- ===================== HUD ===================== -->
   <header class="hud hud-top">
-    <a class="hud-brand" href="#prologue"><span class="hud-dot"></span><b>Proactive AI</b></a>
-    <p class="hud-slate" id="slate" aria-live="polite">SC 01 · Waiting</p>
+    <a class="hud-brand" href="#prologue"><span class="hud-dot"></span><b>主动式 AI（Proactive AI）</b></a>
+    <p class="hud-slate" id="slate" aria-live="polite">SC 01 · 等待</p>
     <p class="hud-tc" id="tc">TC 00:00:00:00</p>
-    <nav class="hud-links" aria-label="Site"><a href="Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">Paper ↗</a><a href="#library">Library</a><a id="hud-classic" href="classic/">Classic view</a></nav>
+    <nav class="hud-links" aria-label="网站"><a href="Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">论文 ↗</a><a href="#library">论文库</a><a id="hud-classic" href="classic/">经典视图</a></nav>
   </header>
-  <nav class="hud hud-bottom" aria-label="Chapters">
+  <nav class="hud hud-bottom" aria-label="章节">
     <div class="track"><div class="track-fill" id="track-fill"></div></div>
     <ol class="chapters" id="chapters"></ol>
   </nav>
@@ -362,102 +362,102 @@
 <!-- ===================== THE LIBRARY ===================== -->
 <main class="library" id="library" aria-labelledby="library-title">
   <header class="lib-bar">
-    <a class="lib-brand" href="#prologue" id="replay"><span class="hud-dot"></span>Replay the film</a>
-    <nav class="lib-nav" aria-label="Library">
-      <a href="Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">Paper ↗</a>
-      <a href="#galaxy">Map</a>
-      <a href="#catalog">Table</a>
-      <a href="classic/">Classic view</a>
-      <a href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents/issues/new?template=suggest-paper.yml">Suggest a paper ↗</a>
+    <a class="lib-brand" href="#prologue" id="replay"><span class="hud-dot"></span>重播影片</a>
+    <nav class="lib-nav" aria-label="论文库">
+      <a href="Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">论文 ↗</a>
+      <a href="#galaxy">图谱</a>
+      <a href="#catalog">表格</a>
+      <a href="classic/">经典视图</a>
+      <a href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents/issues/new?template=suggest-paper.yml">推荐论文 ↗</a>
     </nav>
   </header>
 
   <section class="lib-intro">
-    <p class="kicker">The library</p>
-    <h2 id="library-title">Every work behind the <em>six capacities</em>, in one place.</h2>
-    <p class="lib-lede">The works the survey cites, placed by the capacity they inform or the field they act in. Older work sits deeper in the map. The table below is the same library: search it, filter it, and copy citations. Its second tab holds the representative works the survey analyzes in depth, one application domain at a time.</p>
+    <p class="kicker">论文库</p>
+    <h2 id="library-title">支撑 <em>六项能力</em>的所有工作，汇聚一处。</h2>
+    <p class="lib-lede">综述引用的工作，按其支撑的能力或所属应用领域排列。年代越久的工作，位于图谱越深处。下方表格呈现同一论文库，可供搜索、筛选与复制引用。第二个标签页按应用领域列出综述深入分析的代表性工作。</p>
     <dl class="lib-stats" id="lib-stats">
-      <div><dt>Papers</dt><dd data-stat="papers">1410</dd></div>
-      <div><dt>Representative works</dt><dd data-stat="systems">80</dd></div>
-      <div><dt>Domains</dt><dd data-stat="domains">13</dd></div>
-      <div><dt>Span</dt><dd data-stat="span">1937–2026</dd></div>
+      <div><dt>论文</dt><dd data-stat="papers">1410</dd></div>
+      <div><dt>代表性工作</dt><dd data-stat="systems">80</dd></div>
+      <div><dt>领域</dt><dd data-stat="domains">13</dd></div>
+      <div><dt>时间跨度</dt><dd data-stat="span">1937–2026</dd></div>
     </dl>
   </section>
 
-  <section class="galaxy" id="galaxy" aria-label="3D map of papers">
+  <section class="galaxy" id="galaxy" aria-label="论文 3D 图谱">
     <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
     <div class="galaxy-labels" id="galaxy-labels" aria-hidden="true"></div>
     <div class="galaxy-tip" id="galaxy-tip" role="status" hidden></div>
-    <div class="galaxy-hint">Drag to orbit · click a cluster to open it · zoom in for single papers</div>
+    <div class="galaxy-hint">拖动以环绕查看 · 点击聚类将其展开 · 放大查看单篇论文</div>
     <div class="galaxy-tools">
-      <button type="button" class="tool" id="g-zoom-in" aria-label="Zoom in">+</button>
-      <button type="button" class="tool" id="g-zoom-out" aria-label="Zoom out">−</button>
-      <button type="button" class="tool" id="g-reset">Reset view</button>
+      <button type="button" class="tool" id="g-zoom-in" aria-label="放大">+</button>
+      <button type="button" class="tool" id="g-zoom-out" aria-label="缩小">−</button>
+      <button type="button" class="tool" id="g-reset">重置视图</button>
     </div>
-    <p class="galaxy-fallback" id="galaxy-fallback" hidden>The 3D map needs WebGL. The table below lists the same papers.</p>
+    <p class="galaxy-fallback" id="galaxy-fallback" hidden>3D 图谱需要 WebGL。下方表格列出了相同的论文。</p>
   </section>
 
-  <section class="catalog" id="catalog" aria-label="Tables of papers and of representative works">
+  <section class="catalog" id="catalog" aria-label="论文与代表性工作表格">
     <div class="tabs" role="tablist">
-      <button type="button" role="tab" id="tab-papers" aria-selected="true" aria-controls="panel-papers">Papers <span id="count-papers"></span></button>
-      <button type="button" role="tab" id="tab-systems" aria-selected="false" aria-controls="panel-systems">Representative works <span id="count-systems"></span></button>
+      <button type="button" role="tab" id="tab-papers" aria-selected="true" aria-controls="panel-papers">论文 <span id="count-papers"></span></button>
+      <button type="button" role="tab" id="tab-systems" aria-selected="false" aria-controls="panel-systems">代表性工作 <span id="count-systems"></span></button>
     </div>
 
     <div class="filters" id="filters">
-      <label class="field field-search"><span>Search</span><input id="f-q" type="search" placeholder="Title, author, venue, mechanism…" autocomplete="off"></label>
-      <label class="field"><span>Domain</span><select id="f-domain"><option value="">All domains</option></select></label>
-      <label class="field papers-only"><span>Type</span><select id="f-kind"><option value="">All types</option></select></label>
-      <label class="field papers-only"><span>Since</span><select id="f-year"><option value="">Any year</option></select></label>
-      <label class="field systems-only" hidden><span>Origin</span><select id="f-origin"><option value="">Research and commercial</option><option>Research</option><option>Commercial</option></select></label>
-      <div class="chips papers-only" id="f-caps" role="group" aria-label="Filter by capacity"></div>
-      <button type="button" class="chip chip-cluster" id="f-cluster" aria-pressed="true" title="Clear the map selection" hidden></button>
+      <label class="field field-search"><span>搜索</span><input id="f-q" type="search" placeholder="标题、作者、发表场所、机制……" autocomplete="off"></label>
+      <label class="field"><span>领域</span><select id="f-domain"><option value="">所有领域</option></select></label>
+      <label class="field papers-only"><span>类型</span><select id="f-kind"><option value="">所有类型</option></select></label>
+      <label class="field papers-only"><span>起始年份</span><select id="f-year"><option value="">所有年份</option></select></label>
+      <label class="field systems-only" hidden><span>来源</span><select id="f-origin"><option value="">科研与商业</option><option value="Research">科研</option><option value="Commercial">商业</option></select></label>
+      <div class="chips papers-only" id="f-caps" role="group" aria-label="按能力筛选"></div>
+      <button type="button" class="chip chip-cluster" id="f-cluster" aria-pressed="true" title="清除图谱选择" hidden></button>
     </div>
 
     <div class="result-bar">
       <p id="result-count" aria-live="polite"></p>
       <div class="result-actions">
-        <button type="button" class="link-btn" id="clear">Clear filters</button>
-        <button type="button" class="link-btn papers-only" id="copy-shown">Copy BibTeX for these</button>
-        <button type="button" class="link-btn" id="csv">Download CSV</button>
+        <button type="button" class="link-btn" id="clear">清除筛选</button>
+        <button type="button" class="link-btn papers-only" id="copy-shown">复制当前结果的 BibTeX</button>
+        <button type="button" class="link-btn" id="csv">下载 CSV</button>
       </div>
     </div>
 
     <div class="panel" id="panel-papers" role="tabpanel" aria-labelledby="tab-papers">
       <table class="grid">
         <thead><tr>
-          <th scope="col"><button type="button" data-sort="short">Paper</button></th>
-          <th scope="col"><button type="button" data-sort="cap">Capacity / domain</button></th>
-          <th scope="col"><button type="button" data-sort="kind">Type</button></th>
-          <th scope="col"><button type="button" data-sort="venue">Venue</button></th>
-          <th scope="col"><button type="button" data-sort="year" aria-sort="descending">Year</button></th>
-          <th scope="col"><span class="sr">Actions</span></th>
+          <th scope="col"><button type="button" data-sort="short">论文</button></th>
+          <th scope="col"><button type="button" data-sort="cap">能力 / 领域</button></th>
+          <th scope="col"><button type="button" data-sort="kind">类型</button></th>
+          <th scope="col"><button type="button" data-sort="venue">发表场所</button></th>
+          <th scope="col"><button type="button" data-sort="year" aria-sort="descending">年份</button></th>
+          <th scope="col"><span class="sr">操作</span></th>
         </tr></thead>
         <tbody id="rows-papers"></tbody>
       </table>
-      <button type="button" class="more" id="more-papers" hidden>Show more</button>
+      <button type="button" class="more" id="more-papers" hidden>显示更多</button>
     </div>
     <div class="panel" id="panel-systems" role="tabpanel" aria-labelledby="tab-systems" hidden>
       <table class="grid">
         <thead><tr>
-          <th scope="col"><button type="button" data-sort="system">System</button></th>
-          <th scope="col"><button type="button" data-sort="domain">Domain</button></th>
-          <th scope="col"><button type="button" data-sort="action">What it does</button></th>
-          <th scope="col"><button type="button" data-sort="deployment">Deployed in</button></th>
-          <th scope="col"><button type="button" data-sort="research_type">Origin</button></th>
-          <th scope="col"><span class="sr">Actions</span></th>
+          <th scope="col"><button type="button" data-sort="system">系统</button></th>
+          <th scope="col"><button type="button" data-sort="domain">领域</button></th>
+          <th scope="col"><button type="button" data-sort="action">功能</button></th>
+          <th scope="col"><button type="button" data-sort="deployment">部署领域</button></th>
+          <th scope="col"><button type="button" data-sort="research_type">来源</button></th>
+          <th scope="col"><span class="sr">操作</span></th>
         </tr></thead>
         <tbody id="rows-systems"></tbody>
       </table>
     </div>
-    <p class="empty" id="empty" hidden>No entries match these filters. <button type="button" class="link-btn" id="clear-2">Clear filters</button></p>
+    <p class="empty" id="empty" hidden>没有符合这些筛选条件的条目。 <button type="button" class="link-btn" id="clear-2">清除筛选</button></p>
   </section>
 
   <footer class="lib-foot">
-    <p>Proactive AI for Superintelligent Agents · library data updated <span id="lib-updated">October 2026</span>.</p>
-    <p>Missing a paper? <a href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents/issues/new?template=suggest-paper.yml">Open an issue</a>.</p>
+    <p>面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）· 论文库数据更新于 <span id="lib-updated">2026 年 10 月</span>。</p>
+    <p>缺少某篇论文？ <a href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents/issues/new?template=suggest-paper.yml">提交 Issue</a>。</p>
   </footer>
 </main>
 
-<noscript><p class="noscript">This film needs JavaScript. <a href="classic/">Open the classic survey site</a>.</p></noscript>
+<noscript><p class="noscript">此影片需要 JavaScript。 <a href="classic/">打开综述网站的经典视图</a>。</p></noscript>
 </body>
 </html>

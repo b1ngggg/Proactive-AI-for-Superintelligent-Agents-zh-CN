@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A survey of proactive AI agents: foundations, mechanisms, evaluation, and applications.">
+  <meta name="description" content="主动式 AI 智能体（Proactive AI agents）综述：基础、机制、评估与应用。">
   <meta name="theme-color" content="#0b0c0f">
-  <title>Proactive AI · Classic View</title>
+  <title>主动式 AI（Proactive AI）· 经典版</title>
   <link rel="icon" href="../assets/favicon.png" type="image/png" sizes="180x180">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
@@ -16,23 +16,23 @@
   <script defer src="js/app.js?v=20261007h"></script>
 </head>
 <body>
-  <p class="archive-note">You are viewing the archived classic site. <a href="../">Open the current site</a>.</p>
+  <p class="archive-note">您正在浏览已归档的经典版网站。 <a href="../">打开当前网站</a>.</p>
   <div id="top-anchor" aria-hidden="true"></div>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">跳至正文</a>
   <header class="site-header">
-    <nav class="nav shell" aria-label="Primary navigation">
-      <a class="brand" href="#top-anchor" aria-label="Proactive AI home">
+    <nav class="nav shell" aria-label="主导航">
+      <a class="brand" href="#top-anchor" aria-label="主动式 AI（Proactive AI）首页">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span>Proactive AI</span>
+        <span>主动式 AI（Proactive AI）</span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">菜单</button>
       <div class="nav-links" id="nav-links">
-        <a href="#definition">Definition</a>
-        <a href="#framework">Framework</a>
-        <a href="#evaluation">Evaluation</a>
-        <a href="#systems">Representative works</a>
-        <a href="#citation">Citation</a>
-        <a href="../">Current site</a>
+        <a href="#definition">定义</a>
+        <a href="#framework">框架</a>
+        <a href="#evaluation">评估</a>
+        <a href="#systems">代表性工作</a>
+        <a href="#citation">引用</a>
+        <a href="../">当前网站</a>
       </div>
       <a class="nav-cta" data-link="github" href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents">GitHub ↗</a>
     </nav>
@@ -40,51 +40,51 @@
 
   <main id="main">
     <section class="hero shell">
-      <h1><em>Proactive AI</em> for<br><em>Superintelligent Agents</em></h1>
-      <p class="hero-deck" data-field="tagline">From waiting for instructions to discovering worthwhile work.</p>
+      <h1><em>面向超级智能体（Superintelligent Agents）的</em><br><em>主动式 AI（Proactive AI）</em></h1>
+      <p class="hero-deck" data-field="tagline">从等待指令，到发现值得开展的工作。</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="../Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
+        <a class="button button-primary" href="../Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">阅读论文 ↗</a>
         <a class="button button-ghost" href="https://research.google/pubs/proactive-ai-for-superintelligent-agents/" target="_blank" rel="noopener">Google Research ↗</a>
-        <a class="button button-ghost" href="#framework">Explore the framework</a>
-        <a class="button button-ghost" href="#systems">Browse <span data-count="works">80</span> representative works</a>
+        <a class="button button-ghost" href="#framework">探索框架</a>
+        <a class="button button-ghost" href="#systems">浏览 <span data-count="works">80</span> 项代表性工作</a>
       </div>
       <div class="author-block">
-        <p class="authors" id="authors">Loading authors…</p>
+        <p class="authors" id="authors">正在加载作者…</p>
         <p class="affiliations" id="affiliations"></p>
       </div>
       <figure class="hero-video">
-        <video controls playsinline preload="none" width="1920" height="1080" poster="../assets/video/proactive-ai-promo-poster.webp" aria-label="Video overview of the survey, 1 minute 36 seconds">
+        <video controls playsinline preload="none" width="1920" height="1080" poster="../assets/video/proactive-ai-promo-poster.webp" aria-label="综述视频介绍，时长 1 分 36 秒">
           <source src="../assets/video/proactive-ai-promo.mp4" type="video/mp4">
-          <a href="../assets/video/proactive-ai-promo.mp4">Download the video overview (MP4)</a>
+          <a href="../assets/video/proactive-ai-promo.mp4">下载综述介绍视频（MP4）</a>
         </video>
       </figure>
       <figure class="hero-figure">
-        <img src="../assets/figures/hero.webp" width="2400" height="1056" alt="Reactive agents wait for explicit requests; proactive agents use awareness, anticipation, agenda formation, arbitration, action, and adaptation.">
+        <img src="../assets/figures/hero.webp" width="2400" height="1056" alt="被动式智能体（Reactive agents）等待明确请求；主动式智能体（Proactive agents）运用感知（Awareness）、前瞻（Anticipation）、议程形成（Agenda formation）、仲裁（Arbitration）、行动（Action）与适应（Adaptation）。">
       </figure>
-      <div class="stats" aria-label="Survey at a glance">
-        <div><strong>6A</strong><span>mechanism taxonomy</span></div>
-        <div><strong>13</strong><span>application domains</span></div>
-        <div><strong data-count="works">80</strong><span>representative works</span></div>
-        <div><strong>3</strong><span>evaluation levels</span></div>
+      <div class="stats" aria-label="综述概览">
+        <div><strong>6A</strong><span>机制分类体系</span></div>
+        <div><strong>13</strong><span>应用领域</span></div>
+        <div><strong data-count="works">80</strong><span>代表性工作</span></div>
+        <div><strong>3</strong><span>评估层次</span></div>
       </div>
     </section>
 
     <section class="section shell" id="definition">
       <div class="section-heading">
-        <p class="kicker">01 · Definition</p>
-        <h2>Initiative lives in what the instruction leaves open.</h2>
+        <p class="kicker">01 · 定义</p>
+        <h2>主动性蕴藏于指令留出的决策空间。</h2>
       </div>
       <div class="definition-grid">
         <div class="prose-card">
-          <p class="lead">Proactiveness is the capacity to exercise <strong>delegated discretion</strong> within a task's residual decision space, without a new instruction for each decision.</p>
-          <p>It includes resolving trade-offs, filling procedural gaps, handling contingencies, and replanning while respecting the task's stated goals and constraints.</p>
-          <div class="formula" aria-label="Conceptual relationship">
-            <span>Intelligence</span><b>+</b><span>Alignment</span><b>+</b><span>Proactiveness</span><b>→</b><span>Earned autonomy</span>
+          <p class="lead">主动性（Proactiveness）是指在任务的剩余决策空间（Residual decision space）内行使<strong>受托裁量权（Delegated discretion）</strong>的能力，无须为每个决策获取新的指令。</p>
+          <p>它包括在遵守任务既定目标与约束的前提下，权衡取舍、填补流程空白、处理意外情况并重新规划。</p>
+          <div class="formula" aria-label="概念关系">
+            <span>智能（Intelligence）</span><b>+</b><span>对齐（Alignment）</span><b>+</b><span>主动性（Proactiveness）</span><b>→</b><span>赢得的自主权（Earned autonomy）</span>
           </div>
         </div>
         <figure class="figure-card">
-          <img src="../assets/figures/delegated-discretion.webp" width="2400" height="1552" loading="lazy" decoding="async" alt="A task execution space divided into explicit task instructions and a residual decision space: preference and trade-off decisions, procedural underspecification, contingency and risk underspecification, and adaptive replanning.">
-          <figcaption>Proactiveness as delegated residual discretion.</figcaption>
+          <img src="../assets/figures/delegated-discretion.webp" width="2400" height="1552" loading="lazy" decoding="async" alt="任务执行空间分为明确任务指令与剩余决策空间：偏好与权衡决策、流程说明不足、意外情况与风险说明不足，以及自适应重规划。">
+          <figcaption>主动性（Proactiveness）即受托的剩余裁量权（Delegated residual discretion）。</figcaption>
         </figure>
       </div>
     </section>
@@ -93,13 +93,13 @@
       <div class="shell">
         <div class="section-heading split-heading">
           <div>
-            <p class="kicker">02 · Framework</p>
-            <h2>Six capacities turn context into calibrated initiative.</h2>
+            <p class="kicker">02 · 框架</p>
+            <h2>六种能力将上下文转化为恰当的主动行为。</h2>
           </div>
-          <p>Awareness and anticipation reveal useful gaps. Agenda formation creates commitments. Arbitration decides whether intervention is warranted. Action intervenes within authority. Adaptation learns from the result.</p>
+          <p>感知（Awareness）与前瞻（Anticipation）揭示有价值的缺口。议程形成（Agenda formation）确立承诺。仲裁（Arbitration）判断是否应当介入。行动（Action）在权限范围内实施干预。适应（Adaptation）从结果中学习。</p>
         </div>
         <figure class="framework-figure">
-          <img src="../assets/figures/six-capacities.webp" width="2400" height="1401" loading="lazy" decoding="async" alt="Awareness, anticipation, agenda, arbitration, and action form a cycle; adaptation sits at the center and feeds back into each of them.">
+          <img src="../assets/figures/six-capacities.webp" width="2400" height="1401" loading="lazy" decoding="async" alt="感知（Awareness）、前瞻（Anticipation）、议程（Agenda）、仲裁（Arbitration）与行动（Action）构成循环；适应（Adaptation）位于中央，并向其余各项提供反馈。">
         </figure>
         <div class="capacity-grid" id="capacity-grid" aria-live="polite"></div>
       </div>
@@ -108,22 +108,22 @@
     <section class="section shell" id="history">
       <div class="section-heading split-heading">
         <div>
-          <p class="kicker">03 · Foundations</p>
-          <h2>A long history of increasingly open-ended initiative.</h2>
+          <p class="kicker">03 · 基础</p>
+          <h2>主动行为日益开放的悠久发展历程。</h2>
         </div>
-        <p>Proactive agency draws from control and cybernetics, planning and world models, agent theory, ubiquitous computing, mixed-initiative interaction, and goal reasoning.</p>
+        <p>主动式智能体能力（Proactive agency）汲取了控制与控制论（Cybernetics）、规划与世界模型（World models）、智能体理论、普适计算（Ubiquitous computing）、混合主动式交互（Mixed-initiative interaction）以及目标推理（Goal reasoning）的思想。</p>
       </div>
       <figure class="wide-figure">
-        <img src="../assets/figures/historical-foundations.webp" width="2400" height="1680" loading="lazy" decoding="async" alt="Timeline of historical foundations from control and cybernetics to proactive foundation-model agents.">
+        <img src="../assets/figures/historical-foundations.webp" width="2400" height="1680" loading="lazy" decoding="async" alt="从控制与控制论到主动式基础模型智能体（Proactive foundation-model agents）的历史基础时间线。">
       </figure>
     </section>
 
     <section class="section evaluation-section" id="evaluation">
       <div class="shell">
         <div class="section-heading">
-          <p class="kicker">04 · Evaluation</p>
-          <h2>Evaluating proactiveness requires evidence beyond task completion.</h2>
-          <p class="section-intro">Proactive systems must be evaluated at three complementary levels. A successful intervention can still be poorly timed, unjustified, or burdensome.</p>
+          <p class="kicker">04 · 评估</p>
+          <h2>评估主动性（Proactiveness）需要超越任务完成度的证据。</h2>
+          <p class="section-intro">主动式系统必须在三个互补层次上进行评估。即使干预成功，也可能时机不当、缺乏依据或造成负担。</p>
         </div>
         <div class="evaluation-grid" id="evaluation-grid"></div>
       </div>
@@ -132,10 +132,10 @@
     <section class="section shell" id="maturity">
       <div class="section-heading split-heading">
         <div>
-          <p class="kicker">05 · Application map</p>
-          <h2>Initiative and authority evolve on different axes.</h2>
+          <p class="kicker">05 · 应用图谱</p>
+          <h2>主动行为与权限沿不同维度演进。</h2>
         </div>
-        <p>More capable systems are not automatically granted more authority. Each domain is limited by a different mix of verification, feedback, governance, and evaluation.</p>
+        <p>能力更强的系统不会自动获得更多权限。各领域受到验证、反馈、治理与评估等不同因素组合的制约。</p>
       </div>
       <div class="maturity-grid" id="maturity-grid"></div>
     </section>
@@ -144,36 +144,36 @@
       <div class="shell">
         <div class="section-heading split-heading">
           <div>
-            <p class="kicker">06 · Representative works</p>
-            <h2>Compare the survey’s representative works across the 6A pipeline.</h2>
+            <p class="kicker">06 · 代表性工作</p>
+            <h2>沿 6A 流程比较本综述中的代表性工作。</h2>
           </div>
-          <p>These are the works the survey selects for each application domain and analyzes in depth. Search its application tables, narrow by domain, and compare how each one senses, anticipates, gates, acts, and adapts.</p>
+          <p>这些工作由本综述从各应用领域中选出并深入分析。您可以搜索应用表格、按领域筛选，并比较各项工作如何感知、前瞻、把关、行动与适应。</p>
         </div>
         <div class="explorer-controls">
           <label class="search-field">
-            <span>Search</span>
-            <input id="system-search" type="search" placeholder="Search names, mechanisms, deployments…" autocomplete="off">
+            <span>搜索</span>
+            <input id="system-search" type="search" placeholder="搜索名称、机制、部署方式…" autocomplete="off">
           </label>
           <label class="select-field">
-            <span>Domain</span>
-            <select id="domain-filter"><option value="">All domains</option></select>
+            <span>领域</span>
+            <select id="domain-filter"><option value="">全部领域</option></select>
           </label>
           <label class="select-field">
-            <span>Type</span>
+            <span>类型</span>
             <select id="type-filter">
-              <option value="">All types</option>
-              <option value="Research">Research</option>
-              <option value="Commercial">Commercial</option>
+              <option value="">全部类型</option>
+              <option value="Research">科研</option>
+              <option value="Commercial">商业</option>
             </select>
           </label>
-          <button class="button button-ghost clear-button" id="clear-filters" type="button">Clear</button>
+          <button class="button button-ghost clear-button" id="clear-filters" type="button">清除</button>
         </div>
         <p class="result-count" id="result-count" aria-live="polite"></p>
-        <div class="table-wrap" tabindex="0" aria-label="Scrollable table of representative works">
+        <div class="table-wrap" tabindex="0" aria-label="可滚动的代表性工作表格">
           <table>
             <thead>
               <tr>
-                <th>System</th><th>Domain</th><th>Awareness</th><th>Anticipation</th><th>Arbitration</th><th>Action</th><th>Adaptation</th><th>Deploy.</th>
+                <th>系统</th><th>领域</th><th>感知（Awareness）</th><th>前瞻（Anticipation）</th><th>仲裁（Arbitration）</th><th>行动（Action）</th><th>适应（Adaptation）</th><th>部署</th>
               </tr>
             </thead>
             <tbody id="systems-body"></tbody>
@@ -183,20 +183,20 @@
     </section>
 
     <section class="section shell abstract-section" id="abstract">
-      <div class="section-heading"><p class="kicker">07 · Abstract</p><h2>A unified view of proactive agency.</h2></div>
+      <div class="section-heading"><p class="kicker">07 · 摘要</p><h2>主动式智能体能力（Proactive agency）的统一视角。</h2></div>
       <p class="abstract-copy" data-field="abstract"></p>
     </section>
 
     <section class="section citation-section" id="citation">
       <div class="shell citation-grid">
         <div>
-          <p class="kicker">08 · Citation</p>
-          <h2>Build on the survey.</h2>
-          <a class="button button-primary" data-link="github" href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents">View data on GitHub ↗</a>
+          <p class="kicker">08 · 引用</p>
+          <h2>以本综述为基础继续探索。</h2>
+          <a class="button button-primary" data-link="github" href="https://github.com/EmpathYang/Proactive-AI-for-Superintelligent-Agents">在 GitHub 上查看数据 ↗</a>
         </div>
         <div class="citation-box">
-          <button id="copy-citation" type="button">Copy BibTeX</button>
-          <pre><code id="citation-code">Loading citation…</code></pre>
+          <button id="copy-citation" type="button">复制 BibTeX</button>
+          <pre><code id="citation-code">正在加载引用…</code></pre>
         </div>
       </div>
     </section>
@@ -204,8 +204,8 @@
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <p>Proactive AI for Superintelligent Agents</p>
-      <p>Last data update: <span id="last-updated">October 2026</span>.</p>
+      <p>面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）</p>
+      <p>数据最后更新： <span id="last-updated">2026 年 10 月</span>.</p>
     </div>
   </footer>
 </body>

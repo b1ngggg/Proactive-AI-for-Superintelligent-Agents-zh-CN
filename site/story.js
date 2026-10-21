@@ -43,14 +43,14 @@
   const EVAL_R = [1000, 1300, 1600];
   const EVAL_START = k => 22.55 + 0.7 * k;
 
-  const MAP = { left: 9700, top: 4440, col: 448, lane: 104, pad: 40, cols: ["Reactive", "Trigger", "Forecast", "Mandate", "Agenda-generative"] };
+  const MAP = { left: 9700, top: 4440, col: 448, lane: 104, pad: 40, cols: ["响应（Reactive）", "触发（Trigger）", "预测（Forecast）", "任务授权（Mandate）", "议程生成（Agenda-generative）"] };
   MAP.right = MAP.left + MAP.col * MAP.cols.length;
   MAP.colX = i => MAP.left + MAP.col / 2 + MAP.col * i;
   // the authority axis, top to bottom; `empty` is shown when the survey places no domain in a band
   MAP.bands = [
-    { key: "unsupervised", label: "Unsupervised", sub: "acts unsupervised", lanes: 1, empty: "No domain acts unsupervised" },
-    { key: "gated", label: "Gated action", sub: "acts inside a gate", lanes: 9, empty: "No domain acts inside a gate" },
-    { key: "suggestion", label: "Suggestion", sub: "only suggests", lanes: 4, empty: "No domain only suggests" }
+    { key: "unsupervised", label: "无监督（Unsupervised）", sub: "无监督地行动", lanes: 1, empty: "尚无领域在无监督下行动" },
+    { key: "gated", label: "门控行动（Gated action）", sub: "在门控范围内行动", lanes: 9, empty: "尚无领域在门控范围内行动" },
+    { key: "suggestion", label: "建议（Suggestion）", sub: "仅提出建议", lanes: 4, empty: "尚无领域仅提出建议" }
   ];
   function layoutBands() {
     let y = MAP.top;
@@ -473,10 +473,10 @@
   /* ------------------------------------------------------------- world content */
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const GATE_FAIL = [
-    ["Low confidence", "clarify or seek more information"],
-    ["Low net value", "suppress, defer, or re-plan"],
-    ["Bad moment", "wait or reschedule for a task boundary"],
-    ["Unsafe or unauthorized", "safer fallback, approval, escalation, or refusal"]
+    ["置信度低", "澄清或搜寻更多信息"],
+    ["净价值低", "抑制、推迟或重新规划"],
+    ["时机不当", "等待或重新安排到任务边界"],
+    ["不安全或未经授权", "采用更安全的替代方案、请求批准、升级处理或拒绝"]
   ];
 
   function buildRing(tax, papers) {
@@ -497,8 +497,8 @@
         const up = 330 + row * 230 + (c.id === "arbitration" ? row * 30 : 0), across = side * 215;
         const x = p.x + out.x * up + tan.x * across, y = p.y + out.y * up + tan.y * across;
         const extra = c.id === "arbitration" && GATE_FAIL[k] ? `<em>${esc(GATE_FAIL[k][0])}: ${esc(GATE_FAIL[k][1])}</em>` : "";
-        const label = c.id === "arbitration" ? `Gate ${k + 1} of 4` : `Dimension ${k + 1}`;
-        html += `<div class="w up sat rv" data-show="${(CAP_START(i) + 0.22 + k * 0.08).toFixed(2)} ${(CAP_START(i) + 1.2).toFixed(2)}" style="--x:${x.toFixed(0)};--y:${y.toFixed(0)};--h:${c.color}"><span class="sat-k">${label}</span><b>${esc(d.name)}</b>${extra}</div>`;
+        const label = c.id === "arbitration" ? `门控（Gate）${k + 1} / 4` : `维度 ${k + 1}`;
+        html += `<div class="w up sat rv" data-show="${(CAP_START(i) + 0.22 + k * 0.08).toFixed(2)} ${(CAP_START(i) + 1.2).toFixed(2)}" style="--x:${x.toFixed(0)};--y:${y.toFixed(0)};--h:${c.color}"><span class="sat-k">${label}</span><b>${esc(d.display_name || d.name)}</b>${extra}</div>`;
       });
     });
     $("#ring-layer").innerHTML = html;
@@ -506,15 +506,15 @@
     $("#cap-capacities").innerHTML = caps.map((c, i) => {
       const s = CAP_START(i);
       const gate = c.id === "arbitration"
-        ? `<ul class="gate">${GATE_FAIL.map(g => `<li><b>${esc(g[0])}</b> → ${esc(g[1])}</li>`).join("")}<li><b>All four pass</b> → license to intervene</li></ul>`
+        ? `<ul class="gate">${GATE_FAIL.map(g => `<li><b>${esc(g[0])}</b> → ${esc(g[1])}</li>`).join("")}<li><b>四项全部通过</b> → 获准干预</li></ul>`
         : "";
       return `<section class="cap rv" data-show="${(s + 0.12).toFixed(2)} ${(s + 1.1).toFixed(2)}">
-        <p class="kicker">Capacity 0${i + 1} of 06</p>
+        <p class="kicker">能力（Capacity）0${i + 1} / 06</p>
         <h2 style="color:${c.color}">${esc(c.name)}</h2>
         <p class="q">“${esc(c.question)}”</p>
         <p>${esc(c.description)}</p>
-        ${counts[c.id] ? `<a class="cap-lib" href="#library" data-cap="${c.id}">${counts[c.id]} papers in the library →</a>` : ""}
-        ${gate || `<ul class="dims">${(c.subdimensions || []).map(d => `<li><b>${esc(d.name)}</b><span>${esc(d.works.join(" · "))}</span></li>`).join("")}</ul>`}
+        ${counts[c.id] ? `<a class="cap-lib" href="#library" data-cap="${c.id}">文献库中有 ${counts[c.id]} 篇论文 →</a>` : ""}
+        ${gate || `<ul class="dims">${(c.subdimensions || []).map(d => `<li><b>${esc(d.display_name || d.name)}</b><span>${esc(d.works.join(" · "))}</span></li>`).join("")}</ul>`}
       </section>`;
     }).join("");
   }
@@ -540,13 +540,13 @@
     $("#cap-evaluation").innerHTML = levels.map((lvl, k) => {
       const t = EVAL_START(k);
       const head = k === 0
-        ? `<h2>Evaluating proactiveness requires evidence beyond task completion.</h2><p>Three complementary levels, and none substitutes for the others: a successful intervention may be poorly justified or burdensome.</p>`
+        ? `<h2>评估主动性（Proactiveness），需要超越任务完成的证据。</h2><p>三个互为补充的层面，彼此无法替代：一次成功的干预，也可能缺乏充分依据，或给用户带来负担。</p>`
         : `<h2>${esc(lvl.name)}</h2>`;
       const rows = lvl.categories.map(c => c.capacity
-        ? `<div class="metric-cap" style="--h:${hue(c.capacity)}"><b>${esc(c.name)}</b><span>${esc(CAPS.find(x => x.id === c.capacity).id)}</span></div>`
+        ? `<div class="metric-cap" style="--h:${hue(c.capacity)}"><b>${esc(c.name)}</b><span>${esc(({ awareness: "感知（Awareness）", anticipation: "前瞻（Anticipation）", agenda: "议程（Agenda）", arbitration: "仲裁（Arbitration）", action: "行动（Action）", adaptation: "适应（Adaptation）" })[c.capacity])}</span></div>`
         : `<div><b>${esc(c.name)}</b><span>${esc(c.metrics.slice(0, 2).join(" · "))}</span></div>`).join("");
       return `<section class="cap rv" data-show="${(t - 0.05).toFixed(2)} ${(t + 0.7).toFixed(2)}">
-        <p class="kicker">Evaluation · level ${k + 1} of 3 · ${esc(lvl.name)}</p>
+        <p class="kicker">评估（Evaluation）· 第 ${k + 1} / 3 层 · ${esc(lvl.name)}</p>
         ${head}
         <p class="q">“${esc(lvl.question)}”</p>
         <div class="metrics">${rows}</div>
@@ -571,16 +571,16 @@
       const n = counts[name.toLowerCase()] ?? 0;
       // the survey's exact authority label when it says more than the band name
       const gate = /^(gated action|suggestion)$/i.test(d.authority) ? "" : d.authority.replace(/^unsupervised\s*\((.*)\)$/i, "$1");
-      return { ...d, lo: Math.min(...span), hi: Math.max(...span), band, n, gate, reaches: /\/\s*action/i.test(d.authority) };
+      return { ...d, lo: Math.min(...span), hi: Math.max(...span), band, n, gate: gate ? (d.authority_zh || gate) : "", reaches: /\/\s*action/i.test(d.authority) };
     });
     MAP.bands.forEach((b, i) => { b.lanes = Math.max(1, rows.filter(r => r.band === i).length); });
     layoutBands();
     buildKeys();
     buildPath();
 
-    let html = `<div class="w axis axis-title rv" data-show="24.95 99" style="--x:${(MAP.left + MAP.right) / 2};--y:${MAP.bottom + 125}">Initiative: where the agent’s task comes from →</div>`;
-    html += `<div class="w rung-empty rv" data-show="25.3 99" style="--x:${MAP.colX(4)};--y:${(MAP.top + MAP.bottom) / 2}">No domain has reached this rung</div>`;
-    html += `<div class="w axis axis-title band-axis rv" data-show="24.95 99" style="--x:${MAP.left - 40};--y:${MAP.top - 70};transform:translate(-100%,-50%)">Authority ↑</div>`;
+    let html = `<div class="w axis axis-title rv" data-show="24.95 99" style="--x:${(MAP.left + MAP.right) / 2};--y:${MAP.bottom + 125}">主动发起（Initiative）：智能体的任务从何而来 →</div>`;
+    html += `<div class="w rung-empty rv" data-show="25.3 99" style="--x:${MAP.colX(4)};--y:${(MAP.top + MAP.bottom) / 2}">尚无领域达到这一级</div>`;
+    html += `<div class="w axis axis-title band-axis rv" data-show="24.95 99" style="--x:${MAP.left - 40};--y:${MAP.top - 70};transform:translate(-100%,-50%)">权限（Authority）↑</div>`;
     MAP.cols.forEach((c, i) => {
       html += `<div class="w axis rv" data-show="24.95 99" style="--x:${MAP.colX(i)};--y:${MAP.bottom + 55}">${c}</div>`;
     });
@@ -599,12 +599,12 @@
         const x0 = MAP.colX(r.lo) - MAP.col / 2 + 14, x1 = MAP.colX(r.hi) + MAP.col / 2 - 14;
         const y = b.top + MAP.pad + MAP.lane * (lane + 0.5);
         const t = 25.0 + i * 0.12 + lane * 0.05;
-        const count = r.n ? `${r.n}<i class="bar-unit"> ${r.n === 1 ? "work" : "works"}</i>` : "no table";
+        const count = r.n ? `${r.n}<i class="bar-unit"> ${r.n === 1 ? "项研究" : "项研究"}</i>` : "无表格";
         // a one-column bar sets its authority label beside it (fitBars), so the frame leaves room for that
         const reach = x1 + (r.gate && r.hi === r.lo ? 340 : 0);
         b.x0 = Math.min(b.x0, x0); b.x1 = Math.max(b.x1, reach);
         b.rows.push({ x0, x1: reach, y });
-        html += `<div class="w bar rv" data-show="${t.toFixed(2)} 99" data-grow="${t.toFixed(2)}" style="--x:${x0};--y:${y};width:${x1 - x0}px" title="${esc(r.domain)}: ${esc(r.constraint)}"><b>${esc(r.domain)}</b>${r.hi - r.lo >= 1 ? `<small>${esc(r.constraint)}</small>` : ""}<span class="bar-n">${r.gate ? `<i class="bar-gate">${esc(r.gate)}</i><i class="bar-sep"> · </i>` : ""}<i class="bar-count">${count}</i></span></div>`;
+        html += `<div class="w bar rv" data-show="${t.toFixed(2)} 99" data-grow="${t.toFixed(2)}" style="--x:${x0};--y:${y};width:${x1 - x0}px" title="${esc(r.domain_zh || r.domain)}: ${esc(r.constraint)}"><b>${esc(r.domain_zh || r.domain)}</b>${r.hi - r.lo >= 1 ? `<small>${esc(r.constraint)}</small>` : ""}<span class="bar-n">${r.gate ? `<i class="bar-gate">${esc(r.gate)}</i><i class="bar-sep"> · </i>` : ""}<i class="bar-count">${count}</i></span></div>`;
         // the same label, set beside the bar: shown only when the bar is too short to hold it (fitBars)
         if (r.gate) html += `<div class="w bar-note rv" data-show="${(t + 0.2).toFixed(2)} 99" style="--x:${x1 + 24};--y:${y}">${esc(r.gate)}</div>`;
       });
@@ -744,22 +744,22 @@
 
   /* ------------------------------------------------------------------ chapters */
   const CHAPTERS = [
-    { id: "opening", u: -PRE, go: -PRE, label: "Why it matters" },
-    { id: "prologue", u: 0, go: 0.6, label: "Waiting" },
-    { id: "discretion", u: 3.1, go: 3.7, label: "Discretion" },
-    { id: "spectrum", u: 6.3, go: 6.9, label: "Spectrum" },
-    { id: "lineage", u: 9.2, go: 9.9, label: "Lineage" },
-    { id: "mechanism", u: 13.5, go: 14.4, label: "The 6A loop" },
-    { id: "evaluation", u: 22.4, go: 22.95, label: "Evidence" },
-    { id: "applications", u: 24.75, go: 25.4, label: "In the field" },
-    { id: "trust", u: 29.15, go: 30.16, label: "Earned autonomy" },
-    { id: "epilogue", u: 30.6, go: 32.4, label: "First move" },
-    { id: "credits", u: 33.1, go: END, label: "Credits" },
-    { id: "library", u: END, go: null, label: "Library" }
+    { id: "opening", u: -PRE, go: -PRE, label: "为何重要" },
+    { id: "prologue", u: 0, go: 0.6, label: "等待" },
+    { id: "discretion", u: 3.1, go: 3.7, label: "裁量空间" },
+    { id: "spectrum", u: 6.3, go: 6.9, label: "谱系" },
+    { id: "lineage", u: 9.2, go: 9.9, label: "源流" },
+    { id: "mechanism", u: 13.5, go: 14.4, label: "6A 循环" },
+    { id: "evaluation", u: 22.4, go: 22.95, label: "证据" },
+    { id: "applications", u: 24.75, go: 25.4, label: "实际应用" },
+    { id: "trust", u: 29.15, go: 30.16, label: "赢得自主权" },
+    { id: "epilogue", u: 30.6, go: 32.4, label: "第一步" },
+    { id: "credits", u: 33.1, go: END, label: "署名" },
+    { id: "library", u: END, go: null, label: "文献库" }
   ];
   function buildChapters() {
     $("#chapters").innerHTML = CHAPTERS.map((c, i) =>
-      `<li style="left:${(((c.u + PRE) / SPAN) * 100).toFixed(2)}%" data-ch="${i}"><button type="button" data-go="${c.go}" aria-label="Jump to ${c.label}"><span>${c.label}</span></button></li>`
+      `<li style="left:${(((c.u + PRE) / SPAN) * 100).toFixed(2)}%" data-ch="${i}"><button type="button" data-go="${c.go}" aria-label="跳转到${c.label}"><span>${c.label}</span></button></li>`
     ).join("");
     document.addEventListener("click", e => {
       const a = e.target.closest("a[data-cap]");
@@ -875,7 +875,7 @@
 
     const epi = u > 31.2;
     chat.classList.toggle("epilogue", epi);
-    chatPh.textContent = epi ? "Your call" : u > 2.15 ? "Waiting for the next instruction" : "Waiting for instructions";
+    chatPh.textContent = epi ? "由你决定" : u > 2.15 ? "等待下一条指令" : "等待指令";
 
     let active = -1;
     CAPS.forEach((c, i) => { if (u >= CAP_START(i) && u < CAP_START(i) + 1.1) active = i; });
@@ -1317,21 +1317,21 @@
     bib.hidden = false;
     try {
       await navigator.clipboard.writeText(bib.textContent);
-      e.currentTarget.textContent = "BibTeX copied";
+      e.currentTarget.textContent = "已复制 BibTeX";
     } catch {
       const r = document.createRange();
       r.selectNodeContents(bib);
       const sel = getSelection();
       sel.removeAllRanges();
       sel.addRange(r);
-      e.currentTarget.textContent = "Selected: press Ctrl/⌘ + C";
+      e.currentTarget.textContent = "已选中：请按 Ctrl/⌘ + C";
     }
   });
 
   /* -------------------------------------------------------------------- boot */
   async function loadJSON(name) {
     const res = await fetch(DATA_BASE + name);
-    if (!res.ok) throw new Error(`Could not load ${name}`);
+    if (!res.ok) throw new Error(`无法加载 ${name}`);
     return res.json();
   }
 

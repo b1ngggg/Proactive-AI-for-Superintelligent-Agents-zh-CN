@@ -2,70 +2,218 @@
   "capacities": [
     {
       "id": "awareness",
-      "name": "Awareness",
-      "question": "What is happening, and what information is missing?",
-      "description": "Maintains decision-relevant context between requests and closes consequential information gaps.",
+      "name": "感知（Awareness）",
+      "question": "正在发生什么，还缺少哪些信息？",
+      "description": "在请求之间维持与决策相关的上下文（Context），并弥补影响重大的信息缺口。",
       "subdimensions": [
-        {"name": "Multimodal state tracking & context management", "works": ["ProAgent (On-Demand Sensory)", "MIRIX"]},
-        {"name": "Active perception & proactive information seeking", "works": ["Ask Early, Ask Late, Ask Right", "Asking Before Acting"]},
-        {"name": "Hierarchical memory systems", "works": ["MemGPT", "Generative Agents", "PlugMem"]},
-        {"name": "Runtime architectures", "works": ["Sleep-time Compute", "Heartbeat Scheduler", "Agent.xpu"]}
+        {
+          "name": "Multimodal state tracking & context management",
+          "works": [
+            "ProAgent (On-Demand Sensory)",
+            "MIRIX"
+          ],
+          "display_name": "多模态状态跟踪与上下文管理（Multimodal state tracking & context management）"
+        },
+        {
+          "name": "Active perception & proactive information seeking",
+          "works": [
+            "Ask Early, Ask Late, Ask Right",
+            "Asking Before Acting"
+          ],
+          "display_name": "主动感知与主动信息搜寻（Active perception & proactive information seeking）"
+        },
+        {
+          "name": "Hierarchical memory systems",
+          "works": [
+            "MemGPT",
+            "Generative Agents",
+            "PlugMem"
+          ],
+          "display_name": "分层记忆系统（Hierarchical memory systems）"
+        },
+        {
+          "name": "Runtime architectures",
+          "works": [
+            "Sleep-time Compute",
+            "Heartbeat Scheduler",
+            "Agent.xpu"
+          ],
+          "display_name": "运行时架构（Runtime architectures）"
+        }
       ]
     },
     {
       "id": "anticipation",
-      "name": "Anticipation",
-      "question": "What may happen, and could acting improve the outcome?",
-      "description": "Connects forecasts and counterfactuals to the expected value of possible interventions.",
+      "name": "前瞻（Anticipation）",
+      "question": "可能发生什么，采取行动能否改善结果？",
+      "description": "将预测（Forecasts）和反事实（Counterfactuals）与可能干预的预期价值关联起来。",
       "subdimensions": [
-        {"name": "Modeling the user", "works": ["Tell Me More!", "JIR-Arena"]},
-        {"name": "Modeling the world", "works": ["World Models", "Qwen-AgentWorld"]},
-        {"name": "Counterfactual reasoning", "works": ["Planning for Proactive Assistance", "CF-GPS"]},
-        {"name": "Generative scenario simulation", "works": ["Talking with 1,000 Personas", "ProMediate"]}
+        {
+          "name": "Modeling the user",
+          "works": [
+            "Tell Me More!",
+            "JIR-Arena"
+          ],
+          "display_name": "用户建模（Modeling the user）"
+        },
+        {
+          "name": "Modeling the world",
+          "works": [
+            "World Models",
+            "Qwen-AgentWorld"
+          ],
+          "display_name": "世界建模（Modeling the world）"
+        },
+        {
+          "name": "Counterfactual reasoning",
+          "works": [
+            "Planning for Proactive Assistance",
+            "CF-GPS"
+          ],
+          "display_name": "反事实推理（Counterfactual reasoning）"
+        },
+        {
+          "name": "Generative scenario simulation",
+          "works": [
+            "Talking with 1,000 Personas",
+            "ProMediate"
+          ],
+          "display_name": "生成式情景模拟（Generative scenario simulation）"
+        }
       ]
     },
     {
       "id": "agenda",
-      "name": "Agenda",
-      "question": "Which candidate goals deserve sustained commitment?",
-      "description": "Turns forecasts into prioritized intentions that persist and evolve across interactions.",
+      "name": "议程（Agenda）",
+      "question": "哪些候选目标值得持续投入？",
+      "description": "将预测转化为按优先级排列的意图，使其在多次交互中持续存在并不断演进。",
       "subdimensions": [
-        {"name": "Goal generation", "works": ["Goal-Driven Autonomy", "AI Scientist"]},
-        {"name": "Sub-goal proposal & long-horizon agendas", "works": ["Long-term Task-oriented Agent", "PEPA"]},
-        {"name": "Goal prioritization & conflict resolution", "works": ["Instruction Hierarchy", "Corrigibility"]}
+        {
+          "name": "Goal generation",
+          "works": [
+            "Goal-Driven Autonomy",
+            "AI Scientist"
+          ],
+          "display_name": "目标生成（Goal generation）"
+        },
+        {
+          "name": "Sub-goal proposal & long-horizon agendas",
+          "works": [
+            "Long-term Task-oriented Agent",
+            "PEPA"
+          ],
+          "display_name": "子目标提议与长时程议程（Sub-goal proposal & long-horizon agendas）"
+        },
+        {
+          "name": "Goal prioritization & conflict resolution",
+          "works": [
+            "Instruction Hierarchy",
+            "Corrigibility"
+          ],
+          "display_name": "目标优先级排序与冲突消解（Goal prioritization & conflict resolution）"
+        }
       ]
     },
     {
       "id": "arbitration",
-      "name": "Arbitration",
-      "question": "Is intervention well-founded, worthwhile, timely, and safe?",
-      "description": "Gates initiative using uncertainty, utility, timing, risk, and reversibility.",
+      "name": "仲裁（Arbitration）",
+      "question": "干预是否有充分依据、值得进行、时机恰当且安全？",
+      "description": "依据不确定性（Uncertainty）、效用（Utility）、时机、风险和可逆性（Reversibility），对主动行动进行门控（Gating）。",
       "subdimensions": [
-        {"name": "Uncertainty quantification & confidence thresholds", "works": ["KnowNo", "Ask or Assume?", "DiscussLLM"]},
-        {"name": "Utility–cost analysis", "works": ["LookOut", "Attention-Sensitive Alerting"]},
-        {"name": "Timing & interruption management", "works": ["SHANKS", "Adamczyk & Bailey", "ProMemAssist"]},
-        {"name": "Risk- & reversibility-aware gating", "works": ["ToolEmu", "Attainable Utility Preservation", "Variable-Autonomy by Criticality"]}
+        {
+          "name": "Uncertainty quantification & confidence thresholds",
+          "works": [
+            "KnowNo",
+            "Ask or Assume?",
+            "DiscussLLM"
+          ],
+          "display_name": "不确定性量化与置信度阈值（Uncertainty quantification & confidence thresholds）"
+        },
+        {
+          "name": "Utility–cost analysis",
+          "works": [
+            "LookOut",
+            "Attention-Sensitive Alerting"
+          ],
+          "display_name": "效用—成本分析（Utility–cost analysis）"
+        },
+        {
+          "name": "Timing & interruption management",
+          "works": [
+            "SHANKS",
+            "Adamczyk & Bailey",
+            "ProMemAssist"
+          ],
+          "display_name": "时机与打断管理（Timing & interruption management）"
+        },
+        {
+          "name": "Risk- & reversibility-aware gating",
+          "works": [
+            "ToolEmu",
+            "Attainable Utility Preservation",
+            "Variable-Autonomy by Criticality"
+          ],
+          "display_name": "感知风险与可逆性的门控（Risk- & reversibility-aware gating）"
+        }
       ]
     },
     {
       "id": "action",
-      "name": "Action",
-      "question": "How much work should the agent perform before returning control, and how should it present the intervention?",
-      "description": "Resolves unspecified details within granted authority while preserving human control over consequential commitments.",
+      "name": "行动（Action）",
+      "question": "智能体在交还控制权之前应完成多少工作，又应如何呈现干预？",
+      "description": "在获授权限（Authority）内解决未明确规定的细节，同时保留人类对后果重大的承诺事项的控制权。",
       "subdimensions": [
-        {"name": "Spectrum of autonomy & interaction paradigm", "works": ["Sheridan & Verplank", "Situational Autonomy", "Levels of Autonomy for AI Agents"]},
-        {"name": "Action presentation & mixed-initiative delivery", "works": ["Magentic-UI", "Less Interaction But More Explanation", "Sensible Agent"]}
+        {
+          "name": "Spectrum of autonomy & interaction paradigm",
+          "works": [
+            "Sheridan & Verplank",
+            "Situational Autonomy",
+            "Levels of Autonomy for AI Agents"
+          ],
+          "display_name": "自主权谱系与交互范式（Spectrum of autonomy & interaction paradigm）"
+        },
+        {
+          "name": "Action presentation & mixed-initiative delivery",
+          "works": [
+            "Magentic-UI",
+            "Less Interaction But More Explanation",
+            "Sensible Agent"
+          ],
+          "display_name": "行动呈现与混合主动交付（Action presentation & mixed-initiative delivery）"
+        }
       ]
     },
     {
       "id": "adaptation",
-      "name": "Adaptation",
-      "question": "Was the initiative warranted, and what should change?",
-      "description": "Uses outcomes and feedback for fast reflection and slower calibration of future initiative.",
+      "name": "适应（Adaptation）",
+      "question": "这次主动行动是否恰当，应做出哪些改变？",
+      "description": "利用结果和反馈进行快速反思（Reflection），并以较慢节奏校准未来的主动行动。",
       "subdimensions": [
-        {"name": "Implicit feedback & self-correction", "works": ["Grounded in Reality", "ProactiveAgent", "CDHF"]},
-        {"name": "Inference-time reflection", "works": ["Proactive Conversational Agents", "Agentic Metacognition"]},
-        {"name": "Long-term calibration, personalization & trust", "works": ["Trust in Automation", "PPP"]}
+        {
+          "name": "Implicit feedback & self-correction",
+          "works": [
+            "Grounded in Reality",
+            "ProactiveAgent",
+            "CDHF"
+          ],
+          "display_name": "隐式反馈与自我纠正（Implicit feedback & self-correction）"
+        },
+        {
+          "name": "Inference-time reflection",
+          "works": [
+            "Proactive Conversational Agents",
+            "Agentic Metacognition"
+          ],
+          "display_name": "推理时反思（Inference-time reflection）"
+        },
+        {
+          "name": "Long-term calibration, personalization & trust",
+          "works": [
+            "Trust in Automation",
+            "PPP"
+          ],
+          "display_name": "长期校准、个性化与信任（Long-term calibration, personalization & trust）"
+        }
       ]
     }
   ]
