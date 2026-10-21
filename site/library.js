@@ -20,8 +20,8 @@
   const CAP = Object.fromEntries(CAPS.map((c, i) => [c.id, { ...c, i }]));
   const APP_COLOR = token("--cold") || "#93a9bd";
   const SPARK = token("--spark") || "#ffb44c";
-  const KIND_LABEL = { method: "方法", system: "系统", benchmark: "基准（Benchmark）", study: "研究", position: "观点", survey: "综述", foundational: "基础研究" };
-  const DOMAIN_LABEL = { "Agriculture": "农业（Agriculture）", "AutoResearch": "自动科研（AutoResearch）", "Coding": "编程（Coding）", "Education": "教育（Education）", "Embodied & Robotics": "具身智能与机器人（Embodied & Robotics）", "Entertainment & Media": "娱乐与媒体（Entertainment & Media）", "GUI Agents": "图形界面智能体（GUI Agents）", "General References": "通用参考文献（General References）", "Healthcare": "医疗健康（Healthcare）", "Information Access": "信息获取（Information Access）", "Law": "法律（Law）", "Security": "安全（Security）", "Smart City": "智慧城市（Smart City）", "Smart Home": "智能家居（Smart Home）" };
+  const KIND_LABEL = { method: "方法", system: "系统", benchmark: "Benchmark（基准）", study: "研究", position: "观点", survey: "综述", foundational: "基础研究" };
+  const DOMAIN_LABEL = { "Agriculture": "Agriculture（农业）", "AutoResearch": "AutoResearch（自动科研）", "Coding": "Coding（编程）", "Education": "Education（教育）", "Embodied & Robotics": "Embodied & Robotics（具身智能与机器人）", "Entertainment & Media": "Entertainment & Media（娱乐与媒体）", "GUI Agents": "GUI Agents（图形界面智能体）", "General References": "General References（通用参考文献）", "Healthcare": "Healthcare（医疗健康）", "Information Access": "Information Access（信息获取）", "Law": "Law（法律）", "Security": "Security（安全）", "Smart City": "Smart City（智慧城市）", "Smart Home": "Smart Home（智能家居）" };
   const domainLabel = d => DOMAIN_LABEL[d] || d;
   const typeLabel = t => ({ Research: "科研", Commercial: "商业" })[t] || t;
   const dimensionLabel = d => taxonomy?.capacities.flatMap(c => c.subdimensions).find(s => s.name === d)?.display_name || d;

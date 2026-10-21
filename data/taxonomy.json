@@ -2,9 +2,9 @@
   "capacities": [
     {
       "id": "awareness",
-      "name": "感知（Awareness）",
+      "name": "Awareness（持续感知）",
       "question": "正在发生什么，还缺少哪些信息？",
-      "description": "在请求之间维持与决策相关的上下文（Context），并弥补影响重大的信息缺口。",
+      "description": "在请求之间维持与决策相关的Context（上下文），并弥补影响重大的信息缺口。",
       "subdimensions": [
         {
           "name": "Multimodal state tracking & context management",
@@ -12,7 +12,7 @@
             "ProAgent (On-Demand Sensory)",
             "MIRIX"
           ],
-          "display_name": "多模态状态跟踪与上下文管理（Multimodal state tracking & context management）"
+          "display_name": "Multimodal state tracking & context management（多模态状态跟踪与上下文管理）"
         },
         {
           "name": "Active perception & proactive information seeking",
@@ -20,7 +20,7 @@
             "Ask Early, Ask Late, Ask Right",
             "Asking Before Acting"
           ],
-          "display_name": "主动感知与主动信息搜寻（Active perception & proactive information seeking）"
+          "display_name": "Active perception & proactive information seeking（主动感知与主动信息搜寻）"
         },
         {
           "name": "Hierarchical memory systems",
@@ -29,7 +29,7 @@
             "Generative Agents",
             "PlugMem"
           ],
-          "display_name": "分层记忆系统（Hierarchical memory systems）"
+          "display_name": "Hierarchical memory systems（分层记忆系统）"
         },
         {
           "name": "Runtime architectures",
@@ -38,15 +38,15 @@
             "Heartbeat Scheduler",
             "Agent.xpu"
           ],
-          "display_name": "运行时架构（Runtime architectures）"
+          "display_name": "Runtime architectures（运行时架构）"
         }
       ]
     },
     {
       "id": "anticipation",
-      "name": "前瞻（Anticipation）",
+      "name": "Anticipation（预测与预见）",
       "question": "可能发生什么，采取行动能否改善结果？",
-      "description": "将预测（Forecasts）和反事实（Counterfactuals）与可能干预的预期价值关联起来。",
+      "description": "将Forecasts（预测）和Counterfactuals（反事实）与可能干预的预期价值关联起来。",
       "subdimensions": [
         {
           "name": "Modeling the user",
@@ -54,7 +54,7 @@
             "Tell Me More!",
             "JIR-Arena"
           ],
-          "display_name": "用户建模（Modeling the user）"
+          "display_name": "Modeling the user（用户建模）"
         },
         {
           "name": "Modeling the world",
@@ -62,7 +62,7 @@
             "World Models",
             "Qwen-AgentWorld"
           ],
-          "display_name": "世界建模（Modeling the world）"
+          "display_name": "Modeling the world（世界建模）"
         },
         {
           "name": "Counterfactual reasoning",
@@ -70,7 +70,7 @@
             "Planning for Proactive Assistance",
             "CF-GPS"
           ],
-          "display_name": "反事实推理（Counterfactual reasoning）"
+          "display_name": "Counterfactual reasoning（反事实推理）"
         },
         {
           "name": "Generative scenario simulation",
@@ -78,13 +78,13 @@
             "Talking with 1,000 Personas",
             "ProMediate"
           ],
-          "display_name": "生成式情景模拟（Generative scenario simulation）"
+          "display_name": "Generative scenario simulation（生成式情景模拟）"
         }
       ]
     },
     {
       "id": "agenda",
-      "name": "议程（Agenda）",
+      "name": "Agenda（目标生成与持续管理）",
       "question": "哪些候选目标值得持续投入？",
       "description": "将预测转化为按优先级排列的意图，使其在多次交互中持续存在并不断演进。",
       "subdimensions": [
@@ -94,7 +94,7 @@
             "Goal-Driven Autonomy",
             "AI Scientist"
           ],
-          "display_name": "目标生成（Goal generation）"
+          "display_name": "Goal generation（目标生成）"
         },
         {
           "name": "Sub-goal proposal & long-horizon agendas",
@@ -102,7 +102,7 @@
             "Long-term Task-oriented Agent",
             "PEPA"
           ],
-          "display_name": "子目标提议与长时程议程（Sub-goal proposal & long-horizon agendas）"
+          "display_name": "Sub-goal proposal & long-horizon agendas（子目标提议与长时程议程）"
         },
         {
           "name": "Goal prioritization & conflict resolution",
@@ -110,15 +110,15 @@
             "Instruction Hierarchy",
             "Corrigibility"
           ],
-          "display_name": "目标优先级排序与冲突消解（Goal prioritization & conflict resolution）"
+          "display_name": "Goal prioritization & conflict resolution（目标优先级排序与冲突消解）"
         }
       ]
     },
     {
       "id": "arbitration",
-      "name": "仲裁（Arbitration）",
+      "name": "Arbitration（主动干预决策）",
       "question": "干预是否有充分依据、值得进行、时机恰当且安全？",
-      "description": "依据不确定性（Uncertainty）、效用（Utility）、时机、风险和可逆性（Reversibility），对主动行动进行门控（Gating）。",
+      "description": "依据Uncertainty（不确定性）、Utility（效用）、时机、风险和Reversibility（可逆性），对主动行动进行Gating（门控）。",
       "subdimensions": [
         {
           "name": "Uncertainty quantification & confidence thresholds",
@@ -127,7 +127,7 @@
             "Ask or Assume?",
             "DiscussLLM"
           ],
-          "display_name": "不确定性量化与置信度阈值（Uncertainty quantification & confidence thresholds）"
+          "display_name": "Uncertainty quantification & confidence thresholds（不确定性量化与置信度阈值）"
         },
         {
           "name": "Utility–cost analysis",
@@ -135,7 +135,7 @@
             "LookOut",
             "Attention-Sensitive Alerting"
           ],
-          "display_name": "效用—成本分析（Utility–cost analysis）"
+          "display_name": "Utility–cost analysis（效用—成本分析）"
         },
         {
           "name": "Timing & interruption management",
@@ -144,7 +144,7 @@
             "Adamczyk & Bailey",
             "ProMemAssist"
           ],
-          "display_name": "时机与打断管理（Timing & interruption management）"
+          "display_name": "Timing & interruption management（时机与打断管理）"
         },
         {
           "name": "Risk- & reversibility-aware gating",
@@ -153,15 +153,15 @@
             "Attainable Utility Preservation",
             "Variable-Autonomy by Criticality"
           ],
-          "display_name": "感知风险与可逆性的门控（Risk- & reversibility-aware gating）"
+          "display_name": "Risk- & reversibility-aware gating（感知风险与可逆性的门控）"
         }
       ]
     },
     {
       "id": "action",
-      "name": "行动（Action）",
+      "name": "Action（执行行动）",
       "question": "智能体在交还控制权之前应完成多少工作，又应如何呈现干预？",
-      "description": "在获授权限（Authority）内解决未明确规定的细节，同时保留人类对后果重大的承诺事项的控制权。",
+      "description": "在获授Authority（权限）内解决未明确规定的细节，同时保留人类对后果重大的承诺事项的控制权。",
       "subdimensions": [
         {
           "name": "Spectrum of autonomy & interaction paradigm",
@@ -170,7 +170,7 @@
             "Situational Autonomy",
             "Levels of Autonomy for AI Agents"
           ],
-          "display_name": "自主权谱系与交互范式（Spectrum of autonomy & interaction paradigm）"
+          "display_name": "Spectrum of autonomy & interaction paradigm（自主权谱系与交互范式）"
         },
         {
           "name": "Action presentation & mixed-initiative delivery",
@@ -179,15 +179,15 @@
             "Less Interaction But More Explanation",
             "Sensible Agent"
           ],
-          "display_name": "行动呈现与混合主动交付（Action presentation & mixed-initiative delivery）"
+          "display_name": "Action presentation & mixed-initiative delivery（行动呈现与混合主动交付）"
         }
       ]
     },
     {
       "id": "adaptation",
-      "name": "适应（Adaptation）",
+      "name": "Adaptation（反馈与适应）",
       "question": "这次主动行动是否恰当，应做出哪些改变？",
-      "description": "利用结果和反馈进行快速反思（Reflection），并以较慢节奏校准未来的主动行动。",
+      "description": "利用结果和反馈进行快速Reflection（反思），并以较慢节奏校准未来的主动行动。",
       "subdimensions": [
         {
           "name": "Implicit feedback & self-correction",
@@ -196,7 +196,7 @@
             "ProactiveAgent",
             "CDHF"
           ],
-          "display_name": "隐式反馈与自我纠正（Implicit feedback & self-correction）"
+          "display_name": "Implicit feedback & self-correction（隐式反馈与自我纠正）"
         },
         {
           "name": "Inference-time reflection",
@@ -204,7 +204,7 @@
             "Proactive Conversational Agents",
             "Agentic Metacognition"
           ],
-          "display_name": "推理时反思（Inference-time reflection）"
+          "display_name": "Inference-time reflection（推理时反思）"
         },
         {
           "name": "Long-term calibration, personalization & trust",
@@ -212,7 +212,7 @@
             "Trust in Automation",
             "PPP"
           ],
-          "display_name": "长期校准、个性化与信任（Long-term calibration, personalization & trust）"
+          "display_name": "Long-term calibration, personalization & trust（长期校准、个性化与信任）"
         }
       ]
     }

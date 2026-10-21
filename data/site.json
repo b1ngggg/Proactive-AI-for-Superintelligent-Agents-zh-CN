@@ -1,7 +1,7 @@
 {
-  "title": "面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）",
+  "title": "面向Superintelligent Agents（超级智能体）的Proactive AI（主动式 AI）",
   "tagline": "从等待指令，到发现值得开展的工作。",
-  "abstract": "AI 智能体（AI agents）在推理、规划、工具使用和长时程任务执行方面的能力日益增强，但许多智能体仍依赖人类识别值得开展的工作并发起行动。主动性（Proactiveness）赋予智能体在没有明确请求时发起有目的行动的能力。我们将主动性视为一项能力，探讨它如何在超级智能体（Superintelligent Agents）的发展中与智能（Intelligence）和对齐（Alignment）相互补充。然而，主动性研究仍分散于不同研究社群之中，各社群使用的术语、假设和评估实践各不相同。我们整合了控制理论（Control）、智能体理论（Agent Theory）、普适计算（Ubiquitous Computing）、混合主动式交互（Mixed-initiative Interaction）和基础模型（Foundation Models）研究中的概念基础与历史发展。我们将支撑机制归纳为六项能力：感知（Awareness）、前瞻（Anticipation）、议程形成（Agenda Formation）、仲裁（Arbitration）、行动（Action）和适应（Adaptation）。我们综合了任务、机制和用户三个层面的评估方法。在包括编程、自主研究、机器人、医疗和教育在内的 13 个应用领域中，我们比较了智能体所行使的主动性（Initiative）与获授的权限（Authority）。最后，我们概述了能力发展、安全与治理，以及新兴应用前沿方面的未来方向，以现有系统的成就与局限为基础，推动超级智能体发展出校准得当的主动性（Calibrated Proactiveness）。",
+  "abstract": "AI agents（AI 智能体）在推理、规划、工具使用和长时程任务执行方面的能力日益增强，但许多智能体仍依赖人类识别值得开展的工作并发起行动。Proactiveness（主动性）赋予智能体在没有明确请求时发起有目的行动的能力。我们将主动性视为一项能力，探讨它如何在Superintelligent Agents（超级智能体）的发展中与Intelligence（智能能力）和Alignment（价值与目标对齐）相互补充。然而，主动性研究仍分散于不同研究社群之中，各社群使用的术语、假设和评估实践各不相同。我们整合了Control（控制理论）、Agent Theory（智能体理论）、Ubiquitous Computing（普适计算）、Mixed-initiative Interaction（混合主动式交互）和Foundation Models（基础模型）研究中的概念基础与历史发展。我们将支撑机制归纳为六项能力：Awareness（持续感知）、Anticipation（预测与预见）、Agenda Formation（目标生成与持续管理）、Arbitration（主动干预决策）、Action（执行行动）和Adaptation（反馈与适应）。我们综合了任务、机制和用户三个层面的评估方法。在包括编程、自主研究、机器人、医疗和教育在内的 13 个应用领域中，我们比较了智能体所行使的Initiative（主动性）与获授的Authority（权限）。最后，我们概述了能力发展、安全与治理，以及新兴应用前沿方面的未来方向，以现有系统的成就与局限为基础，推动超级智能体发展出Calibrated Proactiveness（校准得当的主动性）。",
   "authors": [
     "Ke Yang",
     "Jiateng Liu",

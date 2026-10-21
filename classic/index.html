@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="主动式 AI 智能体（Proactive AI agents）综述：基础、机制、评估与应用。">
+  <meta name="description" content="Proactive AI agents（主动式 AI 智能体）综述：基础、机制、评估与应用。">
   <meta name="theme-color" content="#0b0c0f">
-  <title>主动式 AI（Proactive AI）· 经典版</title>
+  <title>Proactive AI（主动式 AI）· 经典版</title>
   <link rel="icon" href="../assets/favicon.png" type="image/png" sizes="180x180">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
@@ -21,9 +21,9 @@
   <a class="skip-link" href="#main">跳至正文</a>
   <header class="site-header">
     <nav class="nav shell" aria-label="主导航">
-      <a class="brand" href="#top-anchor" aria-label="主动式 AI（Proactive AI）首页">
+      <a class="brand" href="#top-anchor" aria-label="Proactive AI（主动式 AI）首页">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span>主动式 AI（Proactive AI）</span>
+        <span>Proactive AI（主动式 AI）</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">菜单</button>
       <div class="nav-links" id="nav-links">
@@ -40,7 +40,7 @@
 
   <main id="main">
     <section class="hero shell">
-      <h1><em>面向超级智能体（Superintelligent Agents）的</em><br><em>主动式 AI（Proactive AI）</em></h1>
+      <h1><em>面向Superintelligent Agents（超级智能体）的</em><br><em>Proactive AI（主动式 AI）</em></h1>
       <p class="hero-deck" data-field="tagline">从等待指令，到发现值得开展的工作。</p>
       <div class="hero-actions">
         <a class="button button-primary" href="../Proactive-AI-for-Superintelligent-Agents.pdf" target="_blank" rel="noopener">阅读论文 ↗</a>
@@ -59,7 +59,7 @@
         </video>
       </figure>
       <figure class="hero-figure">
-        <img src="../assets/figures/hero.webp" width="2400" height="1056" alt="被动式智能体（Reactive agents）等待明确请求；主动式智能体（Proactive agents）运用感知（Awareness）、前瞻（Anticipation）、议程形成（Agenda formation）、仲裁（Arbitration）、行动（Action）与适应（Adaptation）。">
+        <img src="../assets/figures/hero.webp" width="2400" height="1056" alt="Reactive agents（被动式智能体）等待明确请求；Proactive agents（主动式智能体）运用Awareness（持续感知）、Anticipation（预测与预见）、Agenda formation（目标生成与持续管理）、Arbitration（主动干预决策）、Action（执行行动）与Adaptation（反馈与适应）。">
       </figure>
       <div class="stats" aria-label="综述概览">
         <div><strong>6A</strong><span>机制分类体系</span></div>
@@ -76,15 +76,15 @@
       </div>
       <div class="definition-grid">
         <div class="prose-card">
-          <p class="lead">主动性（Proactiveness）是指在任务的剩余决策空间（Residual decision space）内行使<strong>受托裁量权（Delegated discretion）</strong>的能力，无须为每个决策获取新的指令。</p>
+          <p class="lead">Proactiveness（主动性）是指在任务的Residual decision space（剩余决策空间）内行使<strong>Delegated discretion（受托裁量权）</strong>的能力，无须为每个决策获取新的指令。</p>
           <p>它包括在遵守任务既定目标与约束的前提下，权衡取舍、填补流程空白、处理意外情况并重新规划。</p>
           <div class="formula" aria-label="概念关系">
-            <span>智能（Intelligence）</span><b>+</b><span>对齐（Alignment）</span><b>+</b><span>主动性（Proactiveness）</span><b>→</b><span>赢得的自主权（Earned autonomy）</span>
+            <span>Intelligence（智能能力）</span><b>+</b><span>Alignment（价值与目标对齐）</span><b>+</b><span>Proactiveness（主动性）</span><b>→</b><span>Earned autonomy（赢得的授权自主程度）</span>
           </div>
         </div>
         <figure class="figure-card">
           <img src="../assets/figures/delegated-discretion.webp" width="2400" height="1552" loading="lazy" decoding="async" alt="任务执行空间分为明确任务指令与剩余决策空间：偏好与权衡决策、流程说明不足、意外情况与风险说明不足，以及自适应重规划。">
-          <figcaption>主动性（Proactiveness）即受托的剩余裁量权（Delegated residual discretion）。</figcaption>
+          <figcaption>Proactiveness（主动性）即Delegated residual discretion（受托的剩余裁量权）。</figcaption>
         </figure>
       </div>
     </section>
@@ -96,10 +96,10 @@
             <p class="kicker">02 · 框架</p>
             <h2>六种能力将上下文转化为恰当的主动行为。</h2>
           </div>
-          <p>感知（Awareness）与前瞻（Anticipation）揭示有价值的缺口。议程形成（Agenda formation）确立承诺。仲裁（Arbitration）判断是否应当介入。行动（Action）在权限范围内实施干预。适应（Adaptation）从结果中学习。</p>
+          <p>Awareness（持续感知）与Anticipation（预测与预见）揭示有价值的缺口。Agenda formation（目标生成与持续管理）确立承诺。Arbitration（主动干预决策）判断是否应当介入。Action（执行行动）在权限范围内实施干预。Adaptation（反馈与适应）从结果中学习。</p>
         </div>
         <figure class="framework-figure">
-          <img src="../assets/figures/six-capacities.webp" width="2400" height="1401" loading="lazy" decoding="async" alt="感知（Awareness）、前瞻（Anticipation）、议程（Agenda）、仲裁（Arbitration）与行动（Action）构成循环；适应（Adaptation）位于中央，并向其余各项提供反馈。">
+          <img src="../assets/figures/six-capacities.webp" width="2400" height="1401" loading="lazy" decoding="async" alt="Awareness（持续感知）、Anticipation（预测与预见）、Agenda（目标生成与持续管理）、Arbitration（主动干预决策）与Action（执行行动）构成循环；Adaptation（反馈与适应）位于中央，并向其余各项提供反馈。">
         </figure>
         <div class="capacity-grid" id="capacity-grid" aria-live="polite"></div>
       </div>
@@ -111,10 +111,10 @@
           <p class="kicker">03 · 基础</p>
           <h2>主动行为日益开放的悠久发展历程。</h2>
         </div>
-        <p>主动式智能体能力（Proactive agency）汲取了控制与控制论（Cybernetics）、规划与世界模型（World models）、智能体理论、普适计算（Ubiquitous computing）、混合主动式交互（Mixed-initiative interaction）以及目标推理（Goal reasoning）的思想。</p>
+        <p>Proactive agency（主动式智能体能力）汲取了控制与Cybernetics（控制论）、规划与World models（世界模型）、智能体理论、Ubiquitous computing（普适计算）、Mixed-initiative interaction（混合主动式交互）以及Goal reasoning（目标推理）的思想。</p>
       </div>
       <figure class="wide-figure">
-        <img src="../assets/figures/historical-foundations.webp" width="2400" height="1680" loading="lazy" decoding="async" alt="从控制与控制论到主动式基础模型智能体（Proactive foundation-model agents）的历史基础时间线。">
+        <img src="../assets/figures/historical-foundations.webp" width="2400" height="1680" loading="lazy" decoding="async" alt="从控制与控制论到Proactive foundation-model agents（主动式基础模型智能体）的历史基础时间线。">
       </figure>
     </section>
 
@@ -122,7 +122,7 @@
       <div class="shell">
         <div class="section-heading">
           <p class="kicker">04 · 评估</p>
-          <h2>评估主动性（Proactiveness）需要超越任务完成度的证据。</h2>
+          <h2>评估Proactiveness（主动性）需要超越任务完成度的证据。</h2>
           <p class="section-intro">主动式系统必须在三个互补层次上进行评估。即使干预成功，也可能时机不当、缺乏依据或造成负担。</p>
         </div>
         <div class="evaluation-grid" id="evaluation-grid"></div>
@@ -173,7 +173,7 @@
           <table>
             <thead>
               <tr>
-                <th>系统</th><th>领域</th><th>感知（Awareness）</th><th>前瞻（Anticipation）</th><th>仲裁（Arbitration）</th><th>行动（Action）</th><th>适应（Adaptation）</th><th>部署</th>
+                <th>系统</th><th>领域</th><th>Awareness（持续感知）</th><th>Anticipation（预测与预见）</th><th>Arbitration（主动干预决策）</th><th>Action（执行行动）</th><th>Adaptation（反馈与适应）</th><th>部署</th>
               </tr>
             </thead>
             <tbody id="systems-body"></tbody>
@@ -183,7 +183,7 @@
     </section>
 
     <section class="section shell abstract-section" id="abstract">
-      <div class="section-heading"><p class="kicker">07 · 摘要</p><h2>主动式智能体能力（Proactive agency）的统一视角。</h2></div>
+      <div class="section-heading"><p class="kicker">07 · 摘要</p><h2>Proactive agency（主动式智能体能力）的统一视角。</h2></div>
       <p class="abstract-copy" data-field="abstract"></p>
     </section>
 
@@ -204,7 +204,7 @@
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <p>面向超级智能体（Superintelligent Agents）的主动式 AI（Proactive AI）</p>
+      <p>面向Superintelligent Agents（超级智能体）的Proactive AI（主动式 AI）</p>
       <p>数据最后更新： <span id="last-updated">2026 年 10 月</span>.</p>
     </div>
   </footer>

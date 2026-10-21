@@ -43,14 +43,14 @@
   const EVAL_R = [1000, 1300, 1600];
   const EVAL_START = k => 22.55 + 0.7 * k;
 
-  const MAP = { left: 9700, top: 4440, col: 448, lane: 104, pad: 40, cols: ["响应（Reactive）", "触发（Trigger）", "预测（Forecast）", "任务授权（Mandate）", "议程生成（Agenda-generative）"] };
+  const MAP = { left: 9700, top: 4440, col: 448, lane: 104, pad: 40, cols: ["Reactive（响应）", "Trigger（触发）", "Forecast（预测）", "Mandate（任务授权）", "Agenda-generative（议程生成）"] };
   MAP.right = MAP.left + MAP.col * MAP.cols.length;
   MAP.colX = i => MAP.left + MAP.col / 2 + MAP.col * i;
   // the authority axis, top to bottom; `empty` is shown when the survey places no domain in a band
   MAP.bands = [
-    { key: "unsupervised", label: "无监督（Unsupervised）", sub: "无监督地行动", lanes: 1, empty: "尚无领域在无监督下行动" },
-    { key: "gated", label: "门控行动（Gated action）", sub: "在门控范围内行动", lanes: 9, empty: "尚无领域在门控范围内行动" },
-    { key: "suggestion", label: "建议（Suggestion）", sub: "仅提出建议", lanes: 4, empty: "尚无领域仅提出建议" }
+    { key: "unsupervised", label: "Unsupervised（无监督）", sub: "无监督地行动", lanes: 1, empty: "尚无领域在无监督下行动" },
+    { key: "gated", label: "Gated action（门控行动）", sub: "在门控范围内行动", lanes: 9, empty: "尚无领域在门控范围内行动" },
+    { key: "suggestion", label: "Suggestion（建议）", sub: "仅提出建议", lanes: 4, empty: "尚无领域仅提出建议" }
   ];
   function layoutBands() {
     let y = MAP.top;
@@ -497,7 +497,7 @@
         const up = 330 + row * 230 + (c.id === "arbitration" ? row * 30 : 0), across = side * 215;
         const x = p.x + out.x * up + tan.x * across, y = p.y + out.y * up + tan.y * across;
         const extra = c.id === "arbitration" && GATE_FAIL[k] ? `<em>${esc(GATE_FAIL[k][0])}: ${esc(GATE_FAIL[k][1])}</em>` : "";
-        const label = c.id === "arbitration" ? `门控（Gate）${k + 1} / 4` : `维度 ${k + 1}`;
+        const label = c.id === "arbitration" ? `Gate（门控）${k + 1} / 4` : `维度 ${k + 1}`;
         html += `<div class="w up sat rv" data-show="${(CAP_START(i) + 0.22 + k * 0.08).toFixed(2)} ${(CAP_START(i) + 1.2).toFixed(2)}" style="--x:${x.toFixed(0)};--y:${y.toFixed(0)};--h:${c.color}"><span class="sat-k">${label}</span><b>${esc(d.display_name || d.name)}</b>${extra}</div>`;
       });
     });
@@ -509,7 +509,7 @@
         ? `<ul class="gate">${GATE_FAIL.map(g => `<li><b>${esc(g[0])}</b> → ${esc(g[1])}</li>`).join("")}<li><b>四项全部通过</b> → 获准干预</li></ul>`
         : "";
       return `<section class="cap rv" data-show="${(s + 0.12).toFixed(2)} ${(s + 1.1).toFixed(2)}">
-        <p class="kicker">能力（Capacity）0${i + 1} / 06</p>
+        <p class="kicker">Capacity（能力）0${i + 1} / 06</p>
         <h2 style="color:${c.color}">${esc(c.name)}</h2>
         <p class="q">“${esc(c.question)}”</p>
         <p>${esc(c.description)}</p>
@@ -540,13 +540,13 @@
     $("#cap-evaluation").innerHTML = levels.map((lvl, k) => {
       const t = EVAL_START(k);
       const head = k === 0
-        ? `<h2>评估主动性（Proactiveness），需要超越任务完成的证据。</h2><p>三个互为补充的层面，彼此无法替代：一次成功的干预，也可能缺乏充分依据，或给用户带来负担。</p>`
+        ? `<h2>评估Proactiveness（主动性），需要超越任务完成的证据。</h2><p>三个互为补充的层面，彼此无法替代：一次成功的干预，也可能缺乏充分依据，或给用户带来负担。</p>`
         : `<h2>${esc(lvl.name)}</h2>`;
       const rows = lvl.categories.map(c => c.capacity
-        ? `<div class="metric-cap" style="--h:${hue(c.capacity)}"><b>${esc(c.name)}</b><span>${esc(({ awareness: "感知（Awareness）", anticipation: "前瞻（Anticipation）", agenda: "议程（Agenda）", arbitration: "仲裁（Arbitration）", action: "行动（Action）", adaptation: "适应（Adaptation）" })[c.capacity])}</span></div>`
+        ? `<div class="metric-cap" style="--h:${hue(c.capacity)}"><b>${esc(c.name)}</b><span>${esc(({ awareness: "Awareness（持续感知）", anticipation: "Anticipation（预测与预见）", agenda: "Agenda（目标生成与持续管理）", arbitration: "Arbitration（主动干预决策）", action: "Action（执行行动）", adaptation: "Adaptation（反馈与适应）" })[c.capacity])}</span></div>`
         : `<div><b>${esc(c.name)}</b><span>${esc(c.metrics.slice(0, 2).join(" · "))}</span></div>`).join("");
       return `<section class="cap rv" data-show="${(t - 0.05).toFixed(2)} ${(t + 0.7).toFixed(2)}">
-        <p class="kicker">评估（Evaluation）· 第 ${k + 1} / 3 层 · ${esc(lvl.name)}</p>
+        <p class="kicker">Evaluation（评估）· 第 ${k + 1} / 3 层 · ${esc(lvl.name)}</p>
         ${head}
         <p class="q">“${esc(lvl.question)}”</p>
         <div class="metrics">${rows}</div>
@@ -578,9 +578,9 @@
     buildKeys();
     buildPath();
 
-    let html = `<div class="w axis axis-title rv" data-show="24.95 99" style="--x:${(MAP.left + MAP.right) / 2};--y:${MAP.bottom + 125}">主动发起（Initiative）：智能体的任务从何而来 →</div>`;
+    let html = `<div class="w axis axis-title rv" data-show="24.95 99" style="--x:${(MAP.left + MAP.right) / 2};--y:${MAP.bottom + 125}">Initiative（主动发起）：智能体的任务从何而来 →</div>`;
     html += `<div class="w rung-empty rv" data-show="25.3 99" style="--x:${MAP.colX(4)};--y:${(MAP.top + MAP.bottom) / 2}">尚无领域达到这一级</div>`;
-    html += `<div class="w axis axis-title band-axis rv" data-show="24.95 99" style="--x:${MAP.left - 40};--y:${MAP.top - 70};transform:translate(-100%,-50%)">权限（Authority）↑</div>`;
+    html += `<div class="w axis axis-title band-axis rv" data-show="24.95 99" style="--x:${MAP.left - 40};--y:${MAP.top - 70};transform:translate(-100%,-50%)">Authority（权限）↑</div>`;
     MAP.cols.forEach((c, i) => {
       html += `<div class="w axis rv" data-show="24.95 99" style="--x:${MAP.colX(i)};--y:${MAP.bottom + 55}">${c}</div>`;
     });

@@ -39,12 +39,12 @@ AI agents are increasingly capable of reasoning, planning, using tools, and exec
 The list covers the **1,410** works the survey cites.
 
 - [🧩 Mechanisms: The Six Capacities](#-mechanisms-the-six-capacities)
-  - [👀 感知（Awareness）](#-%E6%84%9F%E7%9F%A5awareness)
-  - [🔮 前瞻（Anticipation）](#-%E5%89%8D%E7%9E%BBanticipation)
-  - [🎯 议程（Agenda）](#-%E8%AE%AE%E7%A8%8Bagenda)
-  - [⚖️ 仲裁（Arbitration）](#%EF%B8%8F-%E4%BB%B2%E8%A3%81arbitration)
-  - [⚡ 行动（Action）](#-%E8%A1%8C%E5%8A%A8action)
-  - [🔄 适应（Adaptation）](#-%E9%80%82%E5%BA%94adaptation)
+  - [👀 Awareness（持续感知）](#-awareness%E6%8C%81%E7%BB%AD%E6%84%9F%E7%9F%A5)
+  - [🔮 Anticipation（预测与预见）](#-anticipation%E9%A2%84%E6%B5%8B%E4%B8%8E%E9%A2%84%E8%A7%81)
+  - [🎯 Agenda（目标生成与持续管理）](#-agenda%E7%9B%AE%E6%A0%87%E7%94%9F%E6%88%90%E4%B8%8E%E6%8C%81%E7%BB%AD%E7%AE%A1%E7%90%86)
+  - [⚖️ Arbitration（主动干预决策）](#%EF%B8%8F-arbitration%E4%B8%BB%E5%8A%A8%E5%B9%B2%E9%A2%84%E5%86%B3%E7%AD%96)
+  - [⚡ Action（执行行动）](#-action%E6%89%A7%E8%A1%8C%E8%A1%8C%E5%8A%A8)
+  - [🔄 Adaptation（反馈与适应）](#-adaptation%E5%8F%8D%E9%A6%88%E4%B8%8E%E9%80%82%E5%BA%94)
 - [🚀 Applications](#-applications)
   - [💻 Coding](#-coding)
   - [🖥️ GUI Agents](#%EF%B8%8F-gui-agents)
@@ -69,9 +69,9 @@ Six interacting capacities for exercising proactive discretion.
 
 ![Six interacting capacities for exercising proactive discretion](assets/figures/six-capacities.webp)
 
-### 👀 感知（Awareness）
+### 👀 Awareness（持续感知）
 
-**正在发生什么，还缺少哪些信息？** 在请求之间维持与决策相关的上下文（Context），并弥补影响重大的信息缺口。
+**正在发生什么，还缺少哪些信息？** 在请求之间维持与决策相关的Context（上下文），并弥补影响重大的信息缺口。
 
 ![Awareness grounds initiative in decision-relevant context](assets/figures/awareness.webp)
 
@@ -217,9 +217,9 @@ Six interacting capacities for exercising proactive discretion.
 | [Needle in a Multimodal Haystack](https://proceedings.neurips.cc/paper_files/paper/2024/hash/24a8968affe71ffe4067d022b9d16566-Abstract-Datasets_and_Benchmarks_Track.html) | Advances in Neural Information Processing Systems 2024 |
 | [Compressing Context to Enhance Inference Efficiency of Large Language Models](https://doi.org/10.18653/v1/2023.emnlp-main.391) | Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing |
 
-### 🔮 前瞻（Anticipation）
+### 🔮 Anticipation（预测与预见）
 
-**可能发生什么，采取行动能否改善结果？** 将预测（Forecasts）和反事实（Counterfactuals）与可能干预的预期价值关联起来。
+**可能发生什么，采取行动能否改善结果？** 将Forecasts（预测）和Counterfactuals（反事实）与可能干预的预期价值关联起来。
 
 ![Anticipation establishes why an intervention may be worth initiating](assets/figures/anticipation.webp)
 
@@ -353,7 +353,7 @@ Six interacting capacities for exercising proactive discretion.
 | [Towards Scalable Multi-Domain Conversational Agents: The Schema-Guided Dialogue Dataset](https://ojs.aaai.org/index.php/AAAI/article/view/6394) | Proceedings of the AAAI Conference on Artificial Intelligence 2020 |
 | [Scaling Egocentric Vision: The EPIC-KITCHENS Dataset](https://openaccess.thecvf.com/content_ECCV_2018/html/Dima_Damen_Scaling_Egocentric_Vision_ECCV_2018_paper.html) | Proceedings of the European Conference on Computer Vision 2018 |
 
-### 🎯 议程（Agenda）
+### 🎯 Agenda（目标生成与持续管理）
 
 **哪些候选目标值得持续投入？** 将预测转化为按优先级排列的意图，使其在多次交互中持续存在并不断演进。
 
@@ -458,9 +458,9 @@ Six interacting capacities for exercising proactive discretion.
 | [NATURAL PLAN: Benchmarking LLMs on Natural Language Planning](https://arxiv.org/abs/2406.04520) | arXiv 2024 |
 | PlanBench: An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change | Advances in Neural Information Processing Systems 2023 |
 
-### ⚖️ 仲裁（Arbitration）
+### ⚖️ Arbitration（主动干预决策）
 
-**干预是否有充分依据、值得进行、时机恰当且安全？** 依据不确定性（Uncertainty）、效用（Utility）、时机、风险和可逆性（Reversibility），对主动行动进行门控（Gating）。
+**干预是否有充分依据、值得进行、时机恰当且安全？** 依据Uncertainty（不确定性）、Utility（效用）、时机、风险和Reversibility（可逆性），对主动行动进行Gating（门控）。
 
 ![Arbitration: a worthwhile goal is not yet a warranted intervention](assets/figures/arbitration.webp)
 
@@ -614,9 +614,9 @@ Six interacting capacities for exercising proactive discretion.
 | Predicting human interruptibility with sensors: a Wizard of Oz feasibility study | Proceedings of the SIGCHI conference on Human factors in computing systems 2003 |
 | [Towards Adjustable Autonomy for the Real World](http://dx.doi.org/10.1613/jair.1037) | Journal of Artificial Intelligence Research 2002 |
 
-### ⚡ 行动（Action）
+### ⚡ Action（执行行动）
 
-**智能体在交还控制权之前应完成多少工作，又应如何呈现干预？** 在获授权限（Authority）内解决未明确规定的细节，同时保留人类对后果重大的承诺事项的控制权。
+**智能体在交还控制权之前应完成多少工作，又应如何呈现干预？** 在获授Authority（权限）内解决未明确规定的细节，同时保留人类对后果重大的承诺事项的控制权。
 
 ![Action: exercising discretion while preserving human control](assets/figures/action.webp)
 
@@ -699,9 +699,9 @@ Six interacting capacities for exercising proactive discretion.
 | Toward meta-cognitive tutoring: A model of help seeking with a Cognitive Tutor | International journal of artificial intelligence in education 2006 |
 | Detecting student misuse of intelligent tutoring systems | International conference on intelligent tutoring systems 2004 |
 
-### 🔄 适应（Adaptation）
+### 🔄 Adaptation（反馈与适应）
 
-**这次主动行动是否恰当，应做出哪些改变？** 利用结果和反馈进行快速反思（Reflection），并以较慢节奏校准未来的主动行动。
+**这次主动行动是否恰当，应做出哪些改变？** 利用结果和反馈进行快速Reflection（反思），并以较慢节奏校准未来的主动行动。
 
 ![Adaptation: learning whether initiative was warranted](assets/figures/adaptation.webp)
 
@@ -820,13 +820,13 @@ A proactive-maturity map of the surveyed domains. **Initiative** places each dom
 
 | Domain | Initiative | Authority | Next milestone | Binding constraint |
 | --- | --- | --- | --- | --- |
-| [Coding](#-coding) | Forecast–mandate | Gated action | 在持续目标下担任代码仓库管家 | 验证准则（Oracles）不完备；人工审查预算 |
-| [GUI Agents](#%EF%B8%8F-gui-agents) | Forecast–mandate | Gated action | 在有界委托（Bounded delegation）下持续跨应用操作 | 原子操作熟练度；隐私；权限 |
+| [Coding](#-coding) | Forecast–mandate | Gated action | 在持续目标下担任代码仓库管家 | Oracles（验证准则）不完备；人工审查预算 |
+| [GUI Agents](#%EF%B8%8F-gui-agents) | Forecast–mandate | Gated action | 在Bounded delegation（有界委托）下持续跨应用操作 | 原子操作熟练度；隐私；权限 |
 | [Information Access](#-information-access) | Forecast | Suggestion | 针对不断演变的用户信息需求，构建持续存在且可修订的模型 | 用户模型；基准对适当保持沉默的覆盖程度 |
 | [Embodied & Robotics](#-embodied--robotics) | Reactive–mandate | Gated action | 能够推断人类意图的相互认知伙伴 | 延迟；物理不可逆性；泛化 |
 | [Security](#-security) | Trigger–forecast | Gated action | 任务授权驱动的防御；可逆的预先部署 | 验证与修复吞吐量 |
-| [AutoResearch](#-autoresearch) | Mandate | Gated action | 由智能体提出研究议程，并采用感知资源约束的设计 | 新颖性与重要性；物理判定器（Physical oracle）的成本与延迟 |
-| [Smart Home](#-smart-home) | Trigger–forecast | Acceptance-gated action | 在持续目标下进行环境式编排（Ambient orchestration） | 仲裁（Arbitration）：这次行动会受欢迎吗？ |
+| [AutoResearch](#-autoresearch) | Mandate | Gated action | 由智能体提出研究议程，并采用感知资源约束的设计 | 新颖性与重要性；Physical oracle（物理判定器）的成本与延迟 |
+| [Smart Home](#-smart-home) | Trigger–forecast | Acceptance-gated action | 在持续目标下进行Ambient orchestration（环境式编排） | Arbitration（主动干预决策）：这次行动会受欢迎吗？ |
 | [Smart City](#%EF%B8%8F-smart-city) | Forecast | Suggestion | 受监督的前瞻式基础设施运营 | 权限分散；公共问责 |
 | [Healthcare](#-healthcare) | Trigger–forecast | Clinician-gated | 跨多次就诊的纵向主动式照护 | 证据标准；责任 |
 | [Law](#-law) | Trigger–forecast | Attorney-gated | 贯穿案件生命周期、理解策略的协助 | 职业责任；保密 |

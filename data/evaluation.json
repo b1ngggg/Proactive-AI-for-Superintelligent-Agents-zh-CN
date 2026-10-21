@@ -1,23 +1,23 @@
 {
-  "source": "综述的“评估（Evaluation）”章节：“评估分类（Evaluation taxonomy）”表，以及“评估主动性需要超越任务完成的证据（Evaluating proactiveness requires evidence beyond task completion）”图",
+  "source": "综述的“Evaluation（评估）”章节：“Evaluation taxonomy（评估分类）”表，以及“Evaluating proactiveness requires evidence beyond task completion（评估主动性需要超越任务完成的证据）”图",
   "levels": [
     {
-      "name": "任务效用（Task Utility）",
+      "name": "Task Utility（任务效用）",
       "question": "主动式协助能否改善任务的整体结果？",
       "purpose": "确定干预是否改善结果。",
       "categories": [
         {
-          "name": "任务成功（Task Success）",
+          "name": "Task Success（任务成功）",
           "metrics": [
-            "依据参考结果或可验证结果衡量的目标完成率（Goal completion rate）",
+            "依据参考结果或可验证结果衡量的Goal completion rate（目标完成率）",
             "特定领域的任务结果",
             "每次干预（轮次级）的成功率"
           ]
         },
         {
-          "name": "任务效率（Task Efficiency）",
+          "name": "Task Efficiency（任务效率）",
           "metrics": [
-            "智能体计算成本：延迟（Latency）、词元（Tokens）、触发频率",
+            "智能体计算成本：Latency（延迟）、Tokens（词元）、触发频率",
             "用户交互成本：轮次、打断、纠正所需投入",
             "经质量调整的效率：单位成本带来的收益"
           ]
@@ -25,32 +25,32 @@
       ]
     },
     {
-      "name": "机制层面（Mechanism-Level）",
+      "name": "Mechanism-Level（机制层面）",
       "question": "智能体如何决定做什么、何时做以及如何做？",
       "purpose": "检验底层能力运行的有效程度。",
       "categories": [
         {
-          "name": "上下文建模效能（Context Modeling Efficacy）",
+          "name": "Context Modeling Efficacy（上下文建模效能）",
           "capacity": "awareness",
           "metrics": [
-            "长上下文或多模态上下文中的检索精确率与召回率（Precision / Recall）",
+            "长上下文或多模态上下文中的检索Precision / Recall（精确率与召回率）",
             "知识更新准确率与过时信息比例",
-            "上下文效率（Context efficiency）",
+            "Context efficiency（上下文效率）",
             "决策前证据覆盖度"
           ]
         },
         {
-          "name": "用户状态与世界状态前瞻（User State and World State Anticipation）",
+          "name": "User State and World State Anticipation（用户状态与世界状态前瞻）",
           "capacity": "anticipation",
           "metrics": [
             "意图、目标和偏好准确率",
-            "预测提前量与误报率（False-alarm rate）",
+            "预测提前量与False-alarm rate（误报率）",
             "歧义检测 F1 与澄清效用",
             "下一状态与事件预测准确率"
           ]
         },
         {
-          "name": "规划质量（Planning Quality）",
+          "name": "Planning Quality（规划质量）",
           "capacity": "agenda",
           "metrics": [
             "目标与议程选择准确率",
@@ -60,17 +60,17 @@
           ]
         },
         {
-          "name": "干预决策与时机（Intervention Decision and Timing）",
+          "name": "Intervention Decision and Timing（干预决策与时机）",
           "capacity": "arbitration",
           "metrics": [
             "干预精确率、召回率与 F1（行动、询问、推迟或放弃）",
-            "自主权校准（Autonomy calibration）：交由他人决策的准确率、风险—覆盖度（Risk–coverage）",
+            "Autonomy calibration（自主权校准）：交由他人决策的准确率、Risk–coverage（风险—覆盖度）",
             "触发时机准确率",
             "不受欢迎的主动行动比例，或遭拒绝后继续坚持的比例"
           ]
         },
         {
-          "name": "干预交付与呈现（Intervention Delivery and Presentation）",
+          "name": "Intervention Delivery and Presentation（干预交付与呈现）",
           "capacity": "action",
           "metrics": [
             "内容正确性与执行准确率",
@@ -80,23 +80,23 @@
           ]
         },
         {
-          "name": "适应与泛化（Adaptation and Generalization）",
+          "name": "Adaptation and Generalization（适应与泛化）",
           "capacity": "adaptation",
           "metrics": [
             "个性化收益与学习效率",
             "发生漂移时的恢复速度与过时记忆比例",
-            "对未见过的用户、任务或环境的泛化能力（Generalization）"
+            "对未见过的用户、任务或环境的Generalization（泛化能力）"
           ]
         }
       ]
     },
     {
-      "name": "用户体验（User Experience）",
+      "name": "User Experience（用户体验）",
       "question": "主动式协助如何影响用户？",
       "purpose": "评估其对工作负荷、控制感和信任的影响。",
       "categories": [
         {
-          "name": "用户工作负荷（User Workload）",
+          "name": "User Workload（用户工作负荷）",
           "metrics": [
             "主观工作负荷：NASA-TLX、Workload Profile、SWAT",
             "行为干扰：理解时间、恢复时间、任务切换成本",
@@ -104,25 +104,25 @@
           ]
         },
         {
-          "name": "可用性与体验（Usability and Experience）",
+          "name": "Usability and Experience（可用性与体验）",
           "metrics": [
-            "标准化可用性与用户体验（UX）评分：SUS、UEQ",
+            "标准化可用性与UX（用户体验）评分：SUS、UEQ",
             "感知有用性、自然程度与协作质量",
             "侵扰程度与隐私顾虑"
           ]
         },
         {
-          "name": "控制程度（Level of Control）",
+          "name": "Level of Control（控制程度）",
           "metrics": [
-            "感知能动性（Agency）与偏好的自主权（Autonomy）水平",
+            "感知Agency（能动性）与偏好的Autonomy（授权自主程度）水平",
             "覆盖、修改和撤销成功率",
             "形式控制与有效控制之间的差距"
           ]
         },
         {
-          "name": "信任与依赖（Trust and Reliance）",
+          "name": "Trust and Reliance（信任与依赖）",
           "metrics": [
-            "依据实际可靠性校准的自动化信任量表（Trust-in-automation scales）",
+            "依据实际可靠性校准的Trust-in-automation scales（自动化信任量表）",
             "恰当依赖：正确接受与正确拒绝的比例",
             "审慎参与行为：验证、错误检测",
             "纵向信任轨迹"

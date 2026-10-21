@@ -12,20 +12,20 @@
       "initiative": "Forecast–mandate",
       "authority": "Gated action",
       "milestone": "在持续目标下担任代码仓库管家",
-      "constraint": "验证准则（Oracles）不完备；人工审查预算",
+      "constraint": "Oracles（验证准则）不完备；人工审查预算",
       "applications": "Coding",
-      "domain_zh": "编程（Coding）",
-      "authority_zh": "门控行动（Gated action）"
+      "domain_zh": "Coding（编程）",
+      "authority_zh": "Gated action（门控行动）"
     },
     {
       "domain": "GUI agents / CUA",
       "initiative": "Forecast–mandate",
       "authority": "Gated action",
-      "milestone": "在有界委托（Bounded delegation）下持续跨应用操作",
+      "milestone": "在Bounded delegation（有界委托）下持续跨应用操作",
       "constraint": "原子操作熟练度；隐私；权限",
       "applications": "GUI Agents",
       "domain_zh": "GUI 智能体 / CUA",
-      "authority_zh": "门控行动（Gated action）"
+      "authority_zh": "Gated action（门控行动）"
     },
     {
       "domain": "Information access",
@@ -34,8 +34,8 @@
       "milestone": "针对不断演变的用户信息需求，构建持续存在且可修订的模型",
       "constraint": "用户模型；基准对适当保持沉默的覆盖程度",
       "applications": "Information Access",
-      "domain_zh": "信息获取（Information access）",
-      "authority_zh": "建议（Suggestion）"
+      "domain_zh": "Information access（信息获取）",
+      "authority_zh": "Suggestion（建议）"
     },
     {
       "domain": "Embodied / robotics",
@@ -44,8 +44,8 @@
       "milestone": "能够推断人类意图的相互认知伙伴",
       "constraint": "延迟；物理不可逆性；泛化",
       "applications": "Embodied & Robotics",
-      "domain_zh": "具身智能 / 机器人（Embodied / robotics）",
-      "authority_zh": "门控行动（Gated action）"
+      "domain_zh": "Embodied / robotics（具身智能 / 机器人）",
+      "authority_zh": "Gated action（门控行动）"
     },
     {
       "domain": "Security",
@@ -54,28 +54,28 @@
       "milestone": "任务授权驱动的防御；可逆的预先部署",
       "constraint": "验证与修复吞吐量",
       "applications": "Security",
-      "domain_zh": "安全（Security）",
-      "authority_zh": "门控行动（Gated action）"
+      "domain_zh": "Security（安全）",
+      "authority_zh": "Gated action（门控行动）"
     },
     {
       "domain": "AutoResearch",
       "initiative": "Mandate",
       "authority": "Gated action",
       "milestone": "由智能体提出研究议程，并采用感知资源约束的设计",
-      "constraint": "新颖性与重要性；物理判定器（Physical oracle）的成本与延迟",
+      "constraint": "新颖性与重要性；Physical oracle（物理判定器）的成本与延迟",
       "applications": "AutoResearch",
-      "domain_zh": "自主研究（AutoResearch）",
-      "authority_zh": "门控行动（Gated action）"
+      "domain_zh": "AutoResearch（自主研究）",
+      "authority_zh": "Gated action（门控行动）"
     },
     {
       "domain": "Smart home",
       "initiative": "Trigger–forecast",
       "authority": "Acceptance-gated action",
-      "milestone": "在持续目标下进行环境式编排（Ambient orchestration）",
-      "constraint": "仲裁（Arbitration）：这次行动会受欢迎吗？",
+      "milestone": "在持续目标下进行Ambient orchestration（环境式编排）",
+      "constraint": "Arbitration（主动干预决策）：这次行动会受欢迎吗？",
       "applications": "Smart Home",
-      "domain_zh": "智能家居（Smart home）",
-      "authority_zh": "接受后方可行动（Acceptance-gated action）"
+      "domain_zh": "Smart home（智能家居）",
+      "authority_zh": "Acceptance-gated action（接受后方可行动）"
     },
     {
       "domain": "Smart city",
@@ -84,8 +84,8 @@
       "milestone": "受监督的前瞻式基础设施运营",
       "constraint": "权限分散；公共问责",
       "applications": "Smart City",
-      "domain_zh": "智慧城市（Smart city）",
-      "authority_zh": "建议（Suggestion）"
+      "domain_zh": "Smart city（智慧城市）",
+      "authority_zh": "Suggestion（建议）"
     },
     {
       "domain": "Healthcare",
@@ -94,8 +94,8 @@
       "milestone": "跨多次就诊的纵向主动式照护",
       "constraint": "证据标准；责任",
       "applications": "Healthcare",
-      "domain_zh": "医疗（Healthcare）",
-      "authority_zh": "临床医生把关（Clinician-gated）"
+      "domain_zh": "Healthcare（医疗）",
+      "authority_zh": "Clinician-gated（临床医生把关）"
     },
     {
       "domain": "Law",
@@ -104,8 +104,8 @@
       "milestone": "贯穿案件生命周期、理解策略的协助",
       "constraint": "职业责任；保密",
       "applications": "Law",
-      "domain_zh": "法律（Law）",
-      "authority_zh": "律师把关（Attorney-gated）"
+      "domain_zh": "Law（法律）",
+      "authority_zh": "Attorney-gated（律师把关）"
     },
     {
       "domain": "Education",
@@ -114,8 +114,8 @@
       "milestone": "理解学习轨迹的学习路径规划",
       "constraint": "结果反馈缓慢且噪声较大",
       "applications": "Education",
-      "domain_zh": "教育（Education）",
-      "authority_zh": "建议（Suggestion）"
+      "domain_zh": "Education（教育）",
+      "authority_zh": "Suggestion（建议）"
     },
     {
       "domain": "Agriculture",
@@ -124,8 +124,8 @@
       "milestone": "感知季节的协调与预防性干预",
       "constraint": "季节性反馈延迟",
       "applications": "Agriculture",
-      "domain_zh": "农业（Agriculture）",
-      "authority_zh": "门控行动（Gated action）"
+      "domain_zh": "Agriculture（农业）",
+      "authority_zh": "Gated action（门控行动）"
     },
     {
       "domain": "Entertainment",
@@ -134,15 +134,15 @@
       "milestone": "跨会话的前瞻式沉浸体验",
       "constraint": "用户满意度反馈噪声较大",
       "applications": "Entertainment & Media",
-      "domain_zh": "娱乐（Entertainment）",
-      "authority_zh": "建议 / 行动（Suggestion / action）"
+      "domain_zh": "Entertainment（娱乐）",
+      "authority_zh": "Suggestion / action（建议 / 行动）"
     }
   ],
   "ladder_zh": [
-    "被动响应（Reactive）",
-    "触发发起（Trigger-initiated）",
-    "预测发起（Forecast-initiated）",
-    "任务授权驱动（Mandate-directed）",
-    "议程生成（Agenda-generative）"
+    "Reactive（被动响应）",
+    "Trigger-initiated（触发发起）",
+    "Forecast-initiated（预测发起）",
+    "Mandate-directed（任务授权驱动）",
+    "Agenda-generative（议程生成）"
   ]
 }
